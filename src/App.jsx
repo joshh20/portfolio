@@ -1,4 +1,5 @@
-import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Header from "./components/Header";
 import Test from "./components/Test";
 import React, { useState } from "react";
 
@@ -9,10 +10,22 @@ export default function App() {
         setIsDarkMode((prevState) => !prevState);
     }
 
+    // Add dark mode class to the root HTML element
+    React.useEffect(() => {
+        if (isDarkMode) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    }, [isDarkMode]);
+
     return (
-        <div className={`${isDarkMode ? "dark" : ""}`}>
-            <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
-            <Test />
+        <div className="">
+            <Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            <main>
+                <Hero />
+                {/* <Test /> */}
+            </main>
         </div>
     );
 }

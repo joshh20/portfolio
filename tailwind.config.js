@@ -12,6 +12,7 @@ export default {
       },
       animation: {
         text: 'text 5s ease infinite',
+        background: 'text 15s ease infinite',
       },
       keyframes: {
         text: {
