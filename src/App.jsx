@@ -11,13 +11,11 @@ export default function App() {
 
     return (
         <DarkContext.Provider value={[isDarkMode, setIsDarkMode]}>
-            <div className="">
-                <Header />
-                <main>
-                    <Hero />
-                    {/* <Test /> */}
-                </main>
-            </div>
+            <Header />
+            <main>
+                <Hero />
+                {/* <Test /> */}
+            </main>
         </DarkContext.Provider>
     );
 }

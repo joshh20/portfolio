@@ -1,26 +1,21 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { DarkContext } from "../App";
 import FlipCard from "./FlipCard";
 
 export default function Header() {
+    // Set text of name section in Header
     const myName = "Josh Hittie";
     const [nameText, setNameText] = useState(myName);
+    const handleNameMouseOver = () => setNameText("Web Developer");
+    const handleNameMouseOut = () => setNameText(myName);
+
+    // Set dark mode context for app
     const [isDarkMode, setIsDarkMode] = useContext(DarkContext);
-
-    const handleNameMouseOver = () => {
-        setNameText("Web Developer");
-    };
-
-    const handleNameMouseOut = () => {
-        setNameText(myName);
-    };
-
     function toggleDarkMode() {
         setIsDarkMode((prevState) => !prevState);
     }
-
     // Add dark mode class to the root HTML element
-    React.useEffect(() => {
+    useEffect(() => {
         if (isDarkMode) {
             document.documentElement.classList.add("dark");
         } else {

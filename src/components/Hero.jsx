@@ -4,17 +4,29 @@ import Links from "../components/Links";
 export default function Hero() {
     return (
         <section>
-            <div className="mx-4 grid max-w-4xl grid-cols-1 py-8 text-slate-800 dark:text-slate-200 sm:mx-12 sm:mt-8 sm:grid-cols-2 sm:leading-relaxed md:gap-x-12 lg:mx-auto">
+            <div className="mx-4 grid max-w-4xl grid-cols-1 py-8 leading-relaxed text-slate-800 dark:text-slate-200 sm:mx-12 sm:mt-8 sm:grid-cols-2 sm:leading-loose md:gap-x-12 lg:mx-auto">
                 <div className="place-self-center">
                     <div className="text-4xl sm:text-6xl md:whitespace-nowrap">
                         I'm Josh Hittie
                     </div>
-                    <div className="mt-4 sm:mt-8">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Perspiciatis beatae quisquam ea, doloribus
-                        voluptas optio possimus. Cumque nulla nesciunt esse
-                        omnis ab voluptatibus sequi, reprehenderit voluptas
-                        pariatur maiores minus rerum!
+                    <div className="mt-4 sm:mt-8 sm:text-lg">
+                        <p>
+                            I love creating well-designed and responsive
+                            websites, ensuring that they look perfect across all
+                            screen sizes, from desktops and laptops to tablets
+                            and phones!
+                        </p>
+                        <br></br>
+                        <p>For me, a successful website encompasses:</p>
+                        <ul className="list-outside list-disc pl-5">
+                            <li>Excellent design</li>
+                            <li>Intuitive navigation</li>
+                            <li>Fast loading times</li>
+                            <li>
+                                An engaging user experience that encourages
+                                visitors to stay
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-8 lg:gap-12">
