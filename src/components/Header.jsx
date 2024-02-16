@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import { DarkContext } from "../App";
 import FlipCard from "./FlipCard";
 
-export default function Header({ isDarkMode, toggleDarkMode }) {
+export default function Header() {
     const myName = "Josh Hittie";
-    const [nameText, setNameText] = React.useState(myName);
+    const [nameText, setNameText] = useState(myName);
+    const [isDarkMode, setIsDarkMode] = useContext(DarkContext);
 
     const handleNameMouseOver = () => {
         setNameText("Web Developer");
@@ -12,6 +14,19 @@ export default function Header({ isDarkMode, toggleDarkMode }) {
     const handleNameMouseOut = () => {
         setNameText(myName);
     };
+
+    function toggleDarkMode() {
+        setIsDarkMode((prevState) => !prevState);
+    }
+
+    // Add dark mode class to the root HTML element
+    React.useEffect(() => {
+        if (isDarkMode) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    }, [isDarkMode]);
 
     return (
         <>
@@ -28,7 +43,7 @@ export default function Header({ isDarkMode, toggleDarkMode }) {
                         tailwindFrontCard={""}
                         tailwindBackCard={""} /> */}
                             <div
-                                className="animate-text transform bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-2xl font-bold text-transparent duration-500 ease-in-out hover:-skew-y-1 hover:scale-125 hover:from-[#D42406] hover:to-[#EBAD25] hover:drop-shadow-md"
+                                className="transform animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-2xl font-bold text-transparent duration-500 ease-in-out hover:-skew-y-1 hover:scale-125 hover:from-[#D42406] hover:to-[#EBAD25] hover:drop-shadow-md"
                                 onMouseOver={handleNameMouseOver}
                                 onMouseOut={handleNameMouseOut}
                             >
@@ -38,14 +53,14 @@ export default function Header({ isDarkMode, toggleDarkMode }) {
                         <nav className="flex gap-4">
                             <a
                                 href="#"
-                                className="group hidden text-xl font-medium transition hover:font-semibold hover:drop-shadow-md sm:block dark:hover:text-slate-200"
+                                className="group hidden text-xl font-medium transition hover:font-semibold hover:drop-shadow-md dark:hover:text-slate-200 sm:block"
                             >
                                 About
                                 <span className="block h-0.5 max-w-0 bg-purple-400 transition-all duration-500 group-hover:max-w-full "></span>
                             </a>
                             <a
                                 href="#"
-                                className="group hidden text-xl font-medium transition hover:font-semibold hover:drop-shadow-md sm:block dark:hover:text-slate-200"
+                                className="group hidden text-xl font-medium transition hover:font-semibold hover:drop-shadow-md dark:hover:text-slate-200 sm:block"
                             >
                                 Projects
                                 <span className="block h-0.5 max-w-0 bg-purple-400 transition-all duration-500 group-hover:max-w-full "></span>
