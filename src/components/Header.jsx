@@ -50,14 +50,14 @@ export default function Header() {
                                 href="#"
                                 className="group hidden text-xl font-medium transition hover:font-semibold hover:drop-shadow-md dark:hover:text-slate-200 sm:block"
                             >
-                                About
+                                Projects
                                 <span className="block h-0.5 max-w-0 bg-purple-400 transition-all duration-500 group-hover:max-w-full "></span>
                             </a>
                             <a
                                 href="#"
                                 className="group hidden text-xl font-medium transition hover:font-semibold hover:drop-shadow-md dark:hover:text-slate-200 sm:block"
                             >
-                                Projects
+                                Contact
                                 <span className="block h-0.5 max-w-0 bg-purple-400 transition-all duration-500 group-hover:max-w-full "></span>
                             </a>
                         </nav>

@@ -11,10 +11,10 @@ export default function Hero() {
                     </div>
                     <div className="mt-4 sm:mt-8 sm:text-lg">
                         <p>
-                            I love creating well-designed and responsive
-                            websites, ensuring that they look perfect across all
-                            screen sizes, from desktops and laptops to tablets
-                            and phones!
+                            I'm a web developer that loves creating
+                            well-designed and responsive websites, ensuring that
+                            they look perfect across all screen sizes, from
+                            desktops and laptops to tablets and phones!
                         </p>
                         <br></br>
                         <p>For me, a successful website encompasses:</p>
