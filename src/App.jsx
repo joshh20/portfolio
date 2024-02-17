@@ -1,22 +1,31 @@
 import Hero from "./components/Hero";
 import Header from "./components/Header";
 import Contact from "./components/Contact";
-import Test from "./components/Test";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import Test from "./pages/Test";
 import React, { createContext, useState } from "react";
+import {
+    RouterProvider,
+    createBrowserRouter,
+    createRoutesFromElements,
+    Route,
+} from "react-router-dom";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 
-export const DarkContext = createContext("");
+const router = createBrowserRouter(
+    createRoutesFromElements(
+        <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="test" element={<Test />} />
+        </Route>,
+    ),
+);
 
-export default function App() {
-    const [isDarkMode, setIsDarkMode] = useState(false);
-
-    return (
-        <DarkContext.Provider value={[isDarkMode, setIsDarkMode]}>
-            <Header />
-            <main>
-                <Hero />
-                {/* <Test /> */}
-                <Contact />
-            </main>
-        </DarkContext.Provider>
-    );
-}
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <React.StrictMode>
+        <RouterProvider router={router} />
+    </React.StrictMode>,
+);

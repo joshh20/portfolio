@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { DarkContext } from "../App";
+import { DarkContext } from "./Layout";
 import FlipCard from "./FlipCard";
 
 export default function Header() {

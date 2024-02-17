@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { DarkContext } from "../App";
+import { DarkContext } from "./Layout";
 
 export default function Links() {
     const [isDarkMode] = useContext(DarkContext);
