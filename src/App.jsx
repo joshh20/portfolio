@@ -1,12 +1,9 @@
-import Hero from "./components/Hero";
-import Header from "./components/Header";
-import Contact from "./components/Contact";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Test from "./pages/Test";
 import NotFound from "./pages/NotFound";
-import React, { createContext, useState } from "react";
+import React from "react";
 import {
     RouterProvider,
     createBrowserRouter,

@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 export default function NotFound() {
+    useDocumentTitle("Page not found");
     return (
         <div className="mx-4">
             <div className="mx-auto mt-4 max-w-xl rounded-lg bg-slate-50 p-4 text-center text-slate-800 drop-shadow-xl dark:bg-slate-900 dark:text-slate-300 sm:mt-8 sm:p-8">
