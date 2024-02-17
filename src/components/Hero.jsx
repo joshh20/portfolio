@@ -4,7 +4,7 @@ import Links from "../components/Links";
 export default function Hero() {
     return (
         <section>
-            <div className="mx-4 grid max-w-4xl grid-cols-1 py-8 leading-relaxed text-slate-800 dark:text-slate-200 sm:mx-12 sm:mt-8 sm:grid-cols-2 sm:leading-loose md:gap-x-12 lg:mx-auto">
+            <div className="mx-4 grid max-w-4xl grid-cols-1 py-8 leading-relaxed text-slate-800 dark:text-slate-300 sm:mx-12 sm:mt-8 sm:grid-cols-2 sm:leading-loose md:gap-x-12 lg:mx-auto">
                 <div className="place-self-center">
                     <div className="text-4xl sm:text-6xl md:whitespace-nowrap">
                         I'm Josh Hittie

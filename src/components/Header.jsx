@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { DarkContext } from "./Layout";
-import FlipCard from "./FlipCard";
 
 export default function Header() {
     // Set text of name section in Header
@@ -25,45 +25,46 @@ export default function Header() {
 
     return (
         <>
-            <header className="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <header className="bg-slate-50 text-slate-500 dark:bg-slate-900 dark:text-slate-400">
                 <div className="mx-8">
                     <div className="mx-auto flex max-w-[92rem] items-center justify-between py-5 md:justify-evenly">
-                        <div
-                            className="flex w-28 whitespace-nowrap"
-                            aria-label="Josh Hittie is a Web Developer"
-                        >
-                            {/* Re-examine this later. I can't get the gradient styles to apply properly */}
-                            {/* <FlipCard textFront={myName} textBack={"Web Developer"}
-                        tailwindShared={"text-2xl"}
-                        tailwindFrontCard={""}
-                        tailwindBackCard={""} /> */}
+                        <Link to="/">
                             <div
-                                className="transform animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-2xl font-bold text-transparent duration-500 ease-in-out hover:-skew-y-1 hover:scale-125 hover:from-[#D42406] hover:to-[#EBAD25] hover:drop-shadow-md"
-                                onMouseOver={handleNameMouseOver}
-                                onMouseOut={handleNameMouseOut}
+                                className="flex w-28 whitespace-nowrap"
+                                aria-label="Josh Hittie is a Web Developer"
                             >
-                                {nameText}
+                                <div
+                                    className="transform animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-2xl font-bold text-transparent duration-500 ease-in-out hover:-skew-y-1 hover:scale-125 hover:from-[#D42406] hover:to-[#EBAD25] hover:drop-shadow-md"
+                                    onMouseOver={handleNameMouseOver}
+                                    onMouseOut={handleNameMouseOut}
+                                >
+                                    {nameText}
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                         <nav className="flex gap-4">
-                            <a
-                                href="#"
-                                className="group hidden text-xl font-medium transition hover:font-semibold hover:drop-shadow-md dark:hover:text-slate-200 sm:block"
+                            <NavLink
+                                to="projects"
+                                className={({ isActive }) =>
+                                    `group hidden text-xl font-medium transition hover:font-semibold hover:drop-shadow-md dark:hover:text-slate-200 sm:block ${isActive ? "text-black dark:text-slate-200" : ""}`
+                                }
                             >
                                 Projects
                                 <span className="block h-0.5 max-w-0 bg-purple-400 transition-all duration-500 group-hover:max-w-full "></span>
-                            </a>
-                            <a
-                                href="#"
-                                className="group hidden text-xl font-medium transition hover:font-semibold hover:drop-shadow-md dark:hover:text-slate-200 sm:block"
+                            </NavLink>
+                            <NavLink
+                                to="test"
+                                className={({ isActive }) =>
+                                    `group hidden text-xl font-medium transition hover:font-semibold hover:drop-shadow-md dark:hover:text-slate-200 sm:block ${isActive ? "text-black dark:text-slate-200" : ""}`
+                                }
                             >
-                                Contact
+                                Test
                                 <span className="block h-0.5 max-w-0 bg-purple-400 transition-all duration-500 group-hover:max-w-full "></span>
-                            </a>
+                            </NavLink>
                         </nav>
                         <div className="">
                             <button
-                                className="border-grey-300 ring-grey-300 dark:border-grey-700 dark:ring-grey-200 flex items-center justify-center rounded-full border-2 bg-transparent p-2 transition-all hover:ring-2 hover:ring-offset-2 dark:bg-transparent dark:hover:ring-2 dark:hover:ring-offset-2"
+                                className="flex items-center justify-center rounded-full border-2 border-gray-300 bg-transparent p-2 ring-gray-300 transition-all hover:ring-2 hover:ring-offset-2 dark:border-gray-700 dark:bg-transparent dark:ring-gray-200 dark:hover:ring-2 dark:hover:ring-offset-2"
                                 aria-label="Toggle dark mode"
                                 onClick={toggleDarkMode}
                             >
@@ -107,10 +108,10 @@ export default function Header() {
                     </div>
                 </div>
                 <nav className="flex justify-center gap-4 pb-2 sm:hidden">
-                    <button className="border-grey-300 ring-grey-300 dark:border-grey-700 dark:ring-grey-200 rounded-lg border-2 bg-transparent px-2 py-1 transition-all hover:font-bold hover:ring-2 hover:ring-offset-2 dark:bg-transparent dark:hover:ring-2 dark:hover:ring-offset-2">
+                    <button className="rounded-lg border-2 border-gray-300 bg-transparent px-2 py-1 ring-gray-300 transition-all hover:font-bold hover:ring-2 hover:ring-offset-2 dark:border-gray-700 dark:bg-transparent dark:ring-gray-200 dark:hover:ring-2 dark:hover:ring-offset-2">
                         About
                     </button>
-                    <button className="border-grey-300 ring-grey-300 dark:border-grey-700 dark:ring-grey-200 rounded-lg border-2 bg-transparent px-2 py-1 transition-all hover:font-bold hover:ring-2 hover:ring-offset-2 dark:bg-transparent dark:hover:ring-2 dark:hover:ring-offset-2">
+                    <button className="rounded-lg border-2 border-gray-300 bg-transparent px-2 py-1 ring-gray-300 transition-all hover:font-bold hover:ring-2 hover:ring-offset-2 dark:border-gray-700 dark:bg-transparent dark:ring-gray-200 dark:hover:ring-2 dark:hover:ring-offset-2">
                         Projects
                     </button>
                 </nav>
