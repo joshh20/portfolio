@@ -25,7 +25,7 @@ export default function Header() {
 
     return (
         <>
-            <header className="bg-slate-50 text-slate-500 dark:bg-slate-900 dark:text-slate-400">
+            <header className="bg-slate-50 text-slate-500 dark:bg-slate-900 dark:text-slate-300">
                 <div className="mx-8">
                     <div className="mx-auto flex max-w-[92rem] items-center justify-between py-5 md:justify-evenly">
                         <Link to="/">
@@ -108,12 +108,26 @@ export default function Header() {
                     </div>
                 </div>
                 <nav className="flex justify-center gap-4 pb-2 sm:hidden">
-                    <button className="rounded-lg border-2 border-gray-300 bg-transparent px-2 py-1 ring-gray-300 transition-all hover:font-bold hover:ring-2 hover:ring-offset-2 dark:border-gray-700 dark:bg-transparent dark:ring-gray-200 dark:hover:ring-2 dark:hover:ring-offset-2">
-                        About
-                    </button>
-                    <button className="rounded-lg border-2 border-gray-300 bg-transparent px-2 py-1 ring-gray-300 transition-all hover:font-bold hover:ring-2 hover:ring-offset-2 dark:border-gray-700 dark:bg-transparent dark:ring-gray-200 dark:hover:ring-2 dark:hover:ring-offset-2">
-                        Projects
-                    </button>
+                    <NavLink
+                        to="projects"
+                        className={({ isActive }) =>
+                            `${isActive ? "font-bold dark:text-slate-200" : ""}`
+                        }
+                    >
+                        <button className="rounded-lg border-2 border-gray-300 bg-transparent px-2 py-1 ring-gray-300 transition-all hover:font-bold hover:ring-2 hover:ring-offset-2 dark:border-gray-700 dark:bg-transparent dark:ring-gray-200 dark:hover:ring-2 dark:hover:ring-offset-2">
+                            Projects
+                        </button>
+                    </NavLink>
+                    <NavLink
+                        to="test"
+                        className={({ isActive }) =>
+                            `${isActive ? "font-bold dark:text-slate-200" : ""}`
+                        }
+                    >
+                        <button className="rounded-lg border-2 border-gray-300 bg-transparent px-2 py-1 ring-gray-300 transition-all hover:font-bold hover:ring-2 hover:ring-offset-2 dark:border-gray-700 dark:bg-transparent dark:ring-gray-200 dark:hover:ring-2 dark:hover:ring-offset-2">
+                            Test
+                        </button>
+                    </NavLink>
                 </nav>
             </header>
         </>

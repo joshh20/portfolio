@@ -31,7 +31,7 @@ export default function Hero() {
                 </div>
                 <div className="flex flex-col items-center justify-center gap-8 lg:gap-12">
                     <img
-                        className="m-auto mt-8 h-64 w-64 rounded-full object-cover ring-4 ring-slate-300 drop-shadow-2xl dark:ring-slate-800 sm:m-0 sm:mt-0 md:h-80 md:w-80 lg:h-96 lg:w-96"
+                        className="m-auto mt-8 h-64 w-64 rounded-full object-cover ring-4 ring-slate-300 drop-shadow-2xl transition duration-200 hover:scale-105 dark:ring-slate-800 sm:m-0 sm:mt-0 md:h-80 md:w-80 lg:h-96 lg:w-96"
                         src={headShot}
                         alt="Josh Hittie's Business Head Shot"
                     />
