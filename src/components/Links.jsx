@@ -3,10 +3,10 @@ import { DarkContext } from "./Layout";
 
 export default function Links() {
     const [isDarkMode] = useContext(DarkContext);
-    const iconFillColor = isDarkMode ? "#fff" : "#24292f";
+    const iconFillColor = isDarkMode ? "#fff" : "#1e293b";
 
     return (
-        <ul className="flex flex-wrap justify-center gap-4 dark:text-slate-300 md:justify-end">
+        <ul className="flex flex-wrap justify-center gap-4 md:justify-end">
             <li className="text-2xl opacity-70 transition hover:opacity-100">
                 <a
                     href="https://github.com/joshh20"
