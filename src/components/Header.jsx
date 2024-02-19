@@ -25,7 +25,7 @@ export default function Header() {
 
     return (
         <>
-            <header className="bg-slate-50 text-slate-500 dark:bg-slate-900 dark:text-slate-300">
+            <header className="bg-slate-50 text-slate-500 dark:bg-slate-900 dark:text-slate-400">
                 <div className="mx-8">
                     <div className="mx-auto flex max-w-[92rem] items-center justify-between py-5 md:justify-evenly">
                         <Link to="/">
