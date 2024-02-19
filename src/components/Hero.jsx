@@ -10,7 +10,7 @@ export default function Hero() {
                         <p>I'm</p>
                         <p>Josh Hittie</p>
                     </div>
-                    <div className="mt-4 font-bold sm:mt-8 sm:text-lg">
+                    <div className="mt-4 font-semibold sm:mt-8 sm:text-lg">
                         <p>
                             I'm a web developer that loves creating
                             well-designed and responsive websites, ensuring that

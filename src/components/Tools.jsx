@@ -12,7 +12,7 @@ export default function Tools() {
                     <h2 className="mb-8 text-center text-2xl font-semibold text-slate-800 dark:text-slate-300">
                         Some languages and tools that I use
                     </h2>
-                    <div className="mx-auto flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+                    <div className="mx-auto flex flex-wrap items-center justify-center gap-x-12 gap-y-8 font-semibold">
                         <div className="flex flex-col items-center justify-center">
                             <img
                                 src={reactLogo}
