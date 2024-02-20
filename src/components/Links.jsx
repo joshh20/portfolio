@@ -1,15 +1,17 @@
 import { useContext } from "react";
 import { DarkContext } from "./Layout";
+import { useOutletContext } from "react-router-dom";
 
 export default function Links() {
     const [isDarkMode] = useContext(DarkContext);
+    const configData = useOutletContext();
     const iconFillColor = isDarkMode ? "#fff" : "#1e293b";
 
     return (
         <ul className="flex flex-wrap justify-center gap-4 md:justify-end">
             <li className="text-2xl opacity-70 transition hover:opacity-100">
                 <a
-                    href="https://github.com/joshh20"
+                    href={configData.links.GitHub}
                     target="_blank"
                     rel="noopener noreferrer"
                     title="GitHub"
@@ -31,7 +33,7 @@ export default function Links() {
             </li>
             <li className="text-2xl opacity-70 transition hover:opacity-100">
                 <a
-                    href="https://www.linkedin.com/in/josh-hittie-657541211"
+                    href={configData.links.LinkedIn}
                     target="_blank"
                     rel="noopener noreferrer"
                     title="LinkedIn"
@@ -53,7 +55,7 @@ export default function Links() {
             </li>
             <li className="text-2xl opacity-70 transition hover:opacity-100">
                 <a
-                    href="https://twitter.com/joshh20"
+                    href={configData.links.Twitter}
                     target="_blank"
                     rel="noopener noreferrer"
                     title="Twitter"

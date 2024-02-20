@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import configData from "../assets/configData.json";
 
 export const DarkContext = createContext("");
 
@@ -10,11 +11,11 @@ export default function Layout() {
 
     return (
         <DarkContext.Provider value={[isDarkMode, setIsDarkMode]}>
-            <Header />
+            <Header configData={configData} />
             <main>
-                <Outlet />
+                <Outlet context={configData} />
             </main>
-            <Footer />
+            <Footer configData={configData} />
         </DarkContext.Provider>
     );
 }

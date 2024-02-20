@@ -1,10 +1,13 @@
 import Hero from "../components/Hero";
-import { useEffect } from "react";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import Tools from "../components/Tools";
+import { useOutletContext } from "react-router-dom";
 
 export default function Home() {
-    useDocumentTitle("Josh Hittie - Web Developer");
+    const configData = useOutletContext();
+    useDocumentTitle(
+        `${configData.name.first} ${configData.name.last} - ${configData.jobTitle}`,
+    );
     return (
         <>
             <Hero />
