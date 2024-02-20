@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { DarkContext } from "./Layout";
+import { DarkContext } from "../layouts/Layout";
 
 const DarkModeIcon = ({ isDarkMode }) => {
     if (isDarkMode) {

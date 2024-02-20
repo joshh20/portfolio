@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { DarkContext } from "./Layout";
+import { DarkContext } from "../layouts/Layout";
 import { useOutletContext } from "react-router-dom";
 
 export default function Links() {

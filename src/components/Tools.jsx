@@ -4,7 +4,7 @@ export default function Tools() {
     return (
         <section>
             <div className="mx-4 sm:mx-12">
-                <div className="mx-auto my-6 max-w-4xl rounded-md bg-slate-200/10 p-8 text-slate-800 dark:bg-slate-900 dark:text-slate-300 sm:my-8 md:my-20">
+                <div className="mx-auto my-6 max-w-4xl rounded-md bg-slate-200/10 p-8 text-slate-800 shadow-md dark:bg-slate-900 dark:text-slate-300 sm:my-8 md:my-20">
                     <h2 className="mb-8 text-center text-2xl font-semibold text-slate-800 dark:text-slate-300">
                         Some languages and tools that I use
                     </h2>
