@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { DarkContext } from "./Layout";
 
-const DarkModeIcon = (isDarkMode) => {
+const DarkModeIcon = ({ isDarkMode }) => {
     if (isDarkMode) {
         return (
             <svg
