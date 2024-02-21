@@ -92,7 +92,7 @@
             "name": "Vid Vortex",
             "url": "https://vidvortex.com",
             "short": "shorts/vid-vortex.mp4",
-            "description": "Vid Vortex is a website that I created while learning Python and Flask. I frequently used YouTube video downloading websites and would walk away from them feeling frustrated by the lack of high resolution video, multiple codecs, or even sound! I knew that I could do better, so I created Vid Vortex. You simply paste the URL of the YouTube video that you want to download, hit submit, select your resolution, and press confirm. Within seconds, you're able to download the video to your device. It's perfect for when traveling on road trips, or in airplanes where network connectivity is limited.",
+            "description": "Vid Vortex is a website that I created while learning Python and Flask. I frequently used YouTube video downloading websites and would walk away from them feeling frustrated by the lack of high resolution video, multiple codecs, or even sound! I knew that I could do better, so I created Vid Vortex. \n\nYou simply paste the URL of the YouTube video that you want to download, hit submit, select your resolution, and press confirm. Within seconds, you're able to download the video to your device. It's perfect for when traveling on road trips, or in airplanes where network connectivity is limited.",
             "technologiesUsed": [
                 "Python",
                 "Flask",
