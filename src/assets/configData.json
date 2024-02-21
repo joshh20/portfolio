@@ -33,57 +33,57 @@
     "technologies": [
         {
             "name": "React",
-            "image": "React-logo.webp",
+            "image": "logos/React-logo.webp",
             "highlight": true
         },
         {
             "name": "JavaScript",
-            "image": "JavaScript-logo.png",
+            "image": "logos/JavaScript-logo.png",
             "highlight": true
         },
         {
             "name": "Tailwind CSS",
-            "image": "Tailwind-logo.png",
+            "image": "logos/Tailwind-logo.png",
             "highlight": true
         },
         {
             "name": "Docker",
-            "image": "Docker-logo.png",
+            "image": "logos/Docker-logo.png",
             "highlight": true
         },
         {
             "name": "Python",
-            "image": "Python-logo.png",
+            "image": "logos/Python-logo.png",
             "highlight": true
         },
         {
             "name": "Flask",
-            "image": "Flask-logo.png",
+            "image": "logos/Flask-logo.png",
             "highlight": false
         },
         {
             "name": "Celery",
-            "image": "Celery-logo.png",
+            "image": "logos/Celery-logo.png",
             "highlight": false
         },
         {
             "name": "Redis",
-            "image": "Redis-logo.png",
+            "image": "logos/Redis-logo.png",
             "highlight": false
         },
         {
             "name": "Bootstrap",
-            "image": "Bootstrap-logo.png",
+            "image": "logos/Bootstrap-logo.png",
             "highlight": false
         },
         {
             "name": "HTML",
-            "image": "HTML-logo.png",
+            "image": "logos/HTML-logo.png",
             "highlight": false
         },
         {
             "name": "CSS",
-            "image": "CSS-logo.png",
+            "image": "logos/CSS-logo.png",
             "highlight": false
         }
     ],
@@ -91,7 +91,8 @@
         {
             "name": "Vid Vortex",
             "url": "https://vidvortex.com",
-            "description": "Vid Vortex is a website that I created while learning Python and Flask. I frequently used YouTube video downloading websites and would walk away from them feeling frustrated by the lack of high resolution video, multiple codecs, or even sound! I knew that I could do better, so I created Vid Vortex. You simply paste the URL of the YouTube video that you want to download, hit submit, select your resolution, and press confirm. Within seconds, you're able to download the video to your device. It's perfect for when traveling on road trips, or in airports where network connectivity is limited.",
+            "short": "shorts/vid-vortex.mp4",
+            "description": "Vid Vortex is a website that I created while learning Python and Flask. I frequently used YouTube video downloading websites and would walk away from them feeling frustrated by the lack of high resolution video, multiple codecs, or even sound! I knew that I could do better, so I created Vid Vortex. You simply paste the URL of the YouTube video that you want to download, hit submit, select your resolution, and press confirm. Within seconds, you're able to download the video to your device. It's perfect for when traveling on road trips, or in airplanes where network connectivity is limited.",
             "technologiesUsed": [
                 "Python",
                 "Flask",
@@ -104,6 +105,7 @@
         {
             "name": "Static Tailwind Recipes",
             "url": "https://joshhittie.com/tailwind-recipes/",
+            "short": "shorts/tailwind-recipes.mp4",
             "description": "This is a static website that I created while following a tutorial on Tailwind CSS. I would say that Tailwind dramatically increased my enjoyment when writing styling for websites. I enjoyed it so much that I even wrote this website exclusively with Tailwind CSS. It was a pleasure to learn, and makes web development easier.",
             "technologiesUsed": [
                 "Tailwind CSS"
@@ -112,6 +114,7 @@
         {
             "name": "Static YouTube Clone",
             "url": "https://joshhittie.com/youtube-clone/",
+            "short": "shorts/youtube-clone.mp4",
             "description": "This was one of my first projects related to CSS and styling. I followed a YouTuber who ironically demonstrated how to make a static YouTube clone. I learned how to use flex box, grid, general CSS layouts, badges, breakpoints, and more. It taught me to respect CSS and layouts.",
             "technologiesUsed": [
                 "HTML",
