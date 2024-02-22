@@ -62,7 +62,7 @@ export default function ProjectCard() {
                                                 >
                                                     <img
                                                         src={tech.image}
-                                                        className="aspect-square w-16 sm:w-24"
+                                                        className="aspect-square w-12 sm:w-20"
                                                         aria-label={tech.name}
                                                     />
                                                     <h3 className="mt-4">

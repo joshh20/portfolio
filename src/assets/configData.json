@@ -6,12 +6,12 @@
     "jobTitle": "Web Developer",
     "nav": [
         {
-            "name": "Projects",
-            "link": "/projects"
+            "name": "Home",
+            "link": "/"
         },
         {
-            "name": "Test",
-            "link": "/test"
+            "name": "Projects",
+            "link": "/projects"
         }
     ],
     "hero": {
@@ -90,6 +90,16 @@
             "name": "CSS",
             "image": "logos/CSS-logo.png",
             "highlight": false
+        },
+        {
+            "name": "React Router",
+            "image": "logos/ReactRouter-logo.png",
+            "highlight": false
+        },
+        {
+            "name": "Firebase",
+            "image": "logos/Firebase-logo.png",
+            "highlight": false
         }
     ],
     "projects": [
@@ -105,6 +115,17 @@
                 "Redis",
                 "Docker",
                 "Bootstrap"
+            ]
+        },
+        {
+            "name": "Van Life Mockup",
+            "url": "https://joshhittie.com/van-life/",
+            "short": "shorts/van-life.mp4",
+            "description": "Van Life is a static website that I created as part of a tutorial while learning React Router by Remix. It allowed me to build true single page applications (SPAs) with navigation between pages. I also got acquanted with Google Firestore, which is a NoSQL database that allows for building Jamstack (serverless) frontends for the web.",
+            "technologiesUsed": [
+                "React Router",
+                "React",
+                "Firebase"
             ]
         },
         {
