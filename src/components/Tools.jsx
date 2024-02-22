@@ -14,7 +14,7 @@ export default function Tools() {
                             .map((item, index) => (
                                 <div
                                     key={index}
-                                    className="flex flex-col items-center justify-center"
+                                    className="flex flex-col items-center justify-center duration-200 hover:scale-125"
                                 >
                                     <img
                                         src={item.image}

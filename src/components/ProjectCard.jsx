@@ -14,7 +14,7 @@ export default function ProjectCard() {
                         key={projectIndex}
                         className="mx-auto my-6 max-w-4xl rounded-md bg-slate-200/10 p-4 text-slate-800 shadow-md dark:bg-slate-900 dark:text-slate-300 sm:my-14 sm:p-8"
                     >
-                        <h3 className="mb-3 cursor-pointer text-4xl font-bold hover:drop-shadow-lg sm:mb-6">
+                        <h3 className="mb-3 cursor-pointer text-4xl font-bold transition duration-200 ease-in-out hover:drop-shadow-lg sm:mb-6">
                             <a
                                 href={project.url}
                                 target="_blank"
@@ -23,16 +23,18 @@ export default function ProjectCard() {
                                 {project.name}
                             </a>
                         </h3>
-                        <video
-                            src={project.short}
-                            controls
-                            disablepictureinpicture="true"
-                            autoPlay="true"
-                            muted="true"
-                            loop="true"
-                            className="mb-4 rounded-md sm:mb-8"
-                            aria-label={`${project.name} video demonstration`}
-                        ></video>
+                        <div className="flex justify-center">
+                            <video
+                                src={project.short}
+                                playsInline
+                                disablePictureInPicture={true}
+                                autoPlay={true}
+                                muted={true}
+                                loop={true}
+                                className="mb-4 rounded-md sm:mb-8"
+                                aria-label={`${project.name} video demonstration`}
+                            ></video>
+                        </div>
                         <p className="whitespace-pre-line font-semibold leading-relaxed sm:text-lg">
                             {project.description}
                         </p>
@@ -56,7 +58,7 @@ export default function ProjectCard() {
                                             tech && (
                                                 <div
                                                     key={techIndex}
-                                                    className="flex flex-col items-center justify-center"
+                                                    className="flex flex-col items-center justify-center duration-200 hover:scale-125"
                                                 >
                                                     <img
                                                         src={tech.image}

@@ -47,6 +47,11 @@
             "highlight": true
         },
         {
+            "name": "Figma",
+            "image": "logos/Figma-logo.png",
+            "highlight": true
+        },
+        {
             "name": "Docker",
             "image": "logos/Docker-logo.png",
             "highlight": true
