@@ -14,6 +14,7 @@ export default function ProjectCard() {
                         key={projectIndex}
                         className="mx-auto my-6 max-w-4xl rounded-md bg-slate-200/10 p-4 text-slate-800 shadow-md dark:bg-slate-900 dark:text-slate-300 sm:my-14 sm:p-8"
                     >
+                        {/* Project's title */}
                         <h3 className="mb-3 cursor-pointer text-4xl font-bold transition duration-200 ease-in-out hover:drop-shadow-lg sm:mb-6">
                             <a
                                 href={project.url}
@@ -23,6 +24,11 @@ export default function ProjectCard() {
                                 {project.name}
                             </a>
                         </h3>
+                        {/* Project's description */}
+                        <p className="mb-6 whitespace-pre-line font-semibold leading-relaxed sm:text-lg">
+                            {project.description}
+                        </p>
+                        {/* Project's short video */}
                         <div className="flex justify-center">
                             <video
                                 src={project.short}
@@ -35,9 +41,7 @@ export default function ProjectCard() {
                                 aria-label={`${project.name} video demonstration`}
                             ></video>
                         </div>
-                        <p className="whitespace-pre-line font-semibold leading-relaxed sm:text-lg">
-                            {project.description}
-                        </p>
+                        {/* Project's visit website button */}
                         <div className="my-8 text-center">
                             <a
                                 href={project.url}
@@ -47,6 +51,7 @@ export default function ProjectCard() {
                                 Visit website
                             </a>
                         </div>
+                        {/* Project's technologies used */}
                         <div className="mt-12 text-center text-2xl font-semibold">
                             Built with
                             <div className="mt-4 flex flex-wrap justify-center gap-8 text-base sm:gap-12">
@@ -64,6 +69,7 @@ export default function ProjectCard() {
                                                         src={tech.image}
                                                         className="aspect-square w-12 sm:w-20"
                                                         aria-label={tech.name}
+                                                        loading="lazy"
                                                     />
                                                     <h3 className="mt-4">
                                                         {tech.name}

@@ -20,6 +20,7 @@ export default function Tools() {
                                         src={item.image}
                                         className="aspect-square w-16 sm:w-24"
                                         aria-label={item.name}
+                                        loading="lazy"
                                     />
                                     <h3 className="mt-4">{item.name}</h3>
                                 </div>
