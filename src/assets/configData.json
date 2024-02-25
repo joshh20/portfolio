@@ -38,67 +38,67 @@
         },
         {
             "name": "JavaScript",
-            "image": "logos/JavaScript-logo.png",
+            "image": "logos/JavaScript-logo.webp",
             "highlight": true
         },
         {
             "name": "Tailwind CSS",
-            "image": "logos/Tailwind-logo.png",
+            "image": "logos/Tailwind-logo.webp",
             "highlight": true
         },
         {
             "name": "Figma",
-            "image": "logos/Figma-logo.png",
+            "image": "logos/Figma-logo.webp",
             "highlight": true
         },
         {
             "name": "Docker",
-            "image": "logos/Docker-logo.png",
+            "image": "logos/Docker-logo.webp",
             "highlight": true
         },
         {
             "name": "Python",
-            "image": "logos/Python-logo.png",
+            "image": "logos/Python-logo.webp",
             "highlight": true
         },
         {
             "name": "Flask",
-            "image": "logos/Flask-logo.png",
+            "image": "logos/Flask-logo.webp",
             "highlight": false
         },
         {
             "name": "Celery",
-            "image": "logos/Celery-logo.png",
+            "image": "logos/Celery-logo.webp",
             "highlight": false
         },
         {
             "name": "Redis",
-            "image": "logos/Redis-logo.png",
+            "image": "logos/Redis-logo.webp",
             "highlight": false
         },
         {
             "name": "Bootstrap",
-            "image": "logos/Bootstrap-logo.png",
+            "image": "logos/Bootstrap-logo.webp",
             "highlight": false
         },
         {
             "name": "HTML",
-            "image": "logos/HTML-logo.png",
+            "image": "logos/HTML-logo.webp",
             "highlight": false
         },
         {
             "name": "CSS",
-            "image": "logos/CSS-logo.png",
+            "image": "logos/CSS-logo.webp",
             "highlight": false
         },
         {
             "name": "React Router",
-            "image": "logos/ReactRouter-logo.png",
+            "image": "logos/ReactRouter-logo.webp",
             "highlight": false
         },
         {
             "name": "Firebase",
-            "image": "logos/Firebase-logo.png",
+            "image": "logos/Firebase-logo.webp",
             "highlight": false
         }
     ],
