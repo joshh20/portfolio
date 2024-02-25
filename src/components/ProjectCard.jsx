@@ -7,13 +7,10 @@ export default function ProjectCard() {
     );
 
     return (
-        <section>
-            <div className="mx-4 sm:mx-12">
-                {configData.projects.map((project, projectIndex) => (
-                    <div
-                        key={projectIndex}
-                        className="mx-auto my-6 max-w-4xl rounded-md bg-slate-200/10 p-4 text-slate-800 shadow-md dark:bg-slate-900 dark:text-slate-300 sm:my-14 sm:p-8"
-                    >
+        <>
+            {configData.projects.map((project, projectIndex) => (
+                <section key={projectIndex} className="mx-4 sm:mx-12">
+                    <div className="mx-auto my-6 max-w-4xl rounded-md bg-slate-200/10 p-4 text-slate-800 shadow-md dark:bg-slate-900 dark:text-slate-300 sm:my-14 sm:p-8">
                         {/* Project's title */}
                         <h3 className="mb-3 cursor-pointer text-4xl font-bold transition duration-200 ease-in-out hover:drop-shadow-lg sm:mb-6">
                             <a
@@ -82,8 +79,8 @@ export default function ProjectCard() {
                             </div>
                         </div>
                     </div>
-                ))}
-            </div>
-        </section>
+                </section>
+            ))}
+        </>
     );
 }
