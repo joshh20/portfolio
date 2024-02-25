@@ -68,8 +68,9 @@ export default function Header({ configData }) {
     return (
         <>
             <header className="bg-slate-50 text-slate-500 dark:bg-slate-900 dark:text-slate-400">
-                <div className="mx-8">
-                    <div className="mx-auto flex max-w-[92rem] items-center justify-between py-5 md:justify-evenly">
+                <div className="mx-4 sm:mx-12">
+                    <div className="mx-auto flex max-w-4xl items-center justify-between py-5">
+                        {/* Left side */}
                         <Link to="/">
                             <div
                                 className="flex w-28 whitespace-nowrap"
@@ -84,6 +85,7 @@ export default function Header({ configData }) {
                                 </div>
                             </div>
                         </Link>
+                        {/* Center */}
                         <nav className="flex gap-4">
                             {configData.nav.map((item, index) => (
                                 <NavLink
@@ -98,6 +100,7 @@ export default function Header({ configData }) {
                                 </NavLink>
                             ))}
                         </nav>
+                        {/* Right side */}
                         <div>
                             <button
                                 className="flex items-center justify-center rounded-full border-2 border-gray-300 bg-transparent p-2 ring-gray-300 transition-all hover:ring-2 hover:ring-offset-2 dark:border-gray-700 dark:bg-transparent dark:ring-gray-200 dark:hover:ring-2 dark:hover:ring-offset-2"
@@ -109,6 +112,7 @@ export default function Header({ configData }) {
                         </div>
                     </div>
                 </div>
+                {/* Small screen buttons */}
                 <nav className="flex justify-center gap-4 pb-2 sm:hidden">
                     {configData.nav.map((item, index) => (
                         <NavLink
