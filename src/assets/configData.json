@@ -100,6 +100,11 @@
             "name": "Firebase",
             "image": "logos/Firebase-logo.webp",
             "highlight": false
+        },
+        {
+            "name": "FFmpeg",
+            "image": "logos/FFmpeg-logo.webp",
+            "highlight": false
         }
     ],
     "projects": [
@@ -113,6 +118,7 @@
                 "Flask",
                 "Celery",
                 "Redis",
+                "FFmpeg",
                 "Docker",
                 "Bootstrap"
             ]
