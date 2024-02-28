@@ -17,7 +17,6 @@ export default function Layout() {
                 <Outlet context={configData} />
             </main>
             <Footer configData={configData} />
-            <ScrollToTopButton />
         </DarkContext.Provider>
     );
 }
