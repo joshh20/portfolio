@@ -11,14 +11,14 @@ export default function ProjectCard() {
             {configData.projects.map((project, projectIndex) => (
                 <section key={projectIndex} className="pb-4 sm:pb-6">
                     <details
-                        className="rounded-md bg-slate-200/10 p-4 text-slate-800 shadow-md dark:bg-slate-900 dark:text-slate-300 sm:open:p-8 [&_svg]:open:-rotate-180"
+                        className="rounded-md bg-slate-200/10 p-4 text-slate-800 shadow-md open:duration-500 dark:bg-slate-900 dark:text-slate-300 sm:open:p-8 [&_svg]:open:-rotate-180"
                         open={projectIndex === 0 ? true : false}
                     >
                         {/* Project's title */}
                         <summary className="flex cursor-pointer items-center gap-4 text-xl font-semibold transition duration-300 ease-in-out hover:drop-shadow-lg sm:text-2xl">
                             <div>
                                 <svg
-                                    className="w-8 rotate-0 transform text-blue-700 duration-300 sm:w-12"
+                                    className="w-8 rotate-0 transform text-blue-700 duration-500 sm:w-12"
                                     fill="none"
                                     stroke="currentColor"
                                     strokeLinecap="round"
