@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import configData from "../assets/configData.json";
+import ScrollToTopButton from "../components/atoms/ScrollToTopButton";
 
 export const DarkContext = createContext("");
 
@@ -16,6 +17,7 @@ export default function Layout() {
                 <Outlet context={configData} />
             </main>
             <Footer configData={configData} />
+            <ScrollToTopButton />
         </DarkContext.Provider>
     );
 }

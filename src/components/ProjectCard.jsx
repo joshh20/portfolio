@@ -15,7 +15,7 @@ export default function ProjectCard() {
                         open={projectIndex === 0 ? true : false}
                     >
                         {/* Project's title */}
-                        <summary className="flex cursor-pointer items-center gap-4 text-xl font-semibold transition duration-300 ease-in-out hover:drop-shadow-lg sm:text-2xl">
+                        <summary className="flex cursor-pointer items-center gap-4 text-xl font-semibold transition duration-300 ease-in-out hover:drop-shadow-lg sm:text-2xl [&::-webkit-details-marker]:hidden">
                             <div>
                                 <svg
                                     className="w-8 rotate-0 transform text-blue-700 duration-500 sm:w-12"
