@@ -12,7 +12,7 @@ export default function Layout() {
     return (
         <DarkContext.Provider value={[isDarkMode, setIsDarkMode]}>
             <Header configData={configData} />
-            <main>
+            <main className="mx-4 max-w-4xl py-8 sm:mx-12 sm:mt-8 lg:mx-auto">
                 <Outlet context={configData} />
             </main>
             <Footer configData={configData} />

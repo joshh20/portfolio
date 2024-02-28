@@ -9,20 +9,27 @@ export default function ProjectCard() {
     return (
         <>
             {configData.projects.map((project, projectIndex) => (
-                <section key={projectIndex} className="mx-4 sm:mx-12">
-                    <div className="mx-auto my-6 max-w-4xl rounded-md bg-slate-200/10 p-4 text-slate-800 shadow-md dark:bg-slate-900 dark:text-slate-300 sm:my-14 sm:p-8">
+                <section key={projectIndex} className="pb-4 sm:pb-6">
+                    <details className="rounded-md bg-slate-200/10 p-4 text-slate-800 shadow-md dark:bg-slate-900 dark:text-slate-300 sm:open:p-8 [&_svg]:open:-rotate-180">
                         {/* Project's title */}
-                        <h3 className="mb-3 cursor-pointer text-4xl font-bold transition duration-200 ease-in-out hover:drop-shadow-lg sm:mb-6">
-                            <a
-                                href={project.url}
-                                target="_blank"
-                                aria-label={`Link to ${project.name} website`}
-                            >
-                                {project.name}
-                            </a>
-                        </h3>
+                        <summary className="flex cursor-pointer items-center gap-4 text-xl font-semibold transition duration-300 ease-in-out hover:drop-shadow-lg sm:text-2xl">
+                            <div>
+                                <svg
+                                    className="w-8 rotate-0 transform text-blue-700 duration-300 sm:w-12"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                            <div>{project.name}</div>
+                        </summary>
                         {/* Project's description */}
-                        <p className="mb-6 whitespace-pre-line font-semibold leading-relaxed sm:text-lg">
+                        <p className="my-6 whitespace-pre-line font-semibold leading-relaxed sm:text-lg">
                             {project.description}
                         </p>
                         {/* Project's short video */}
@@ -78,7 +85,7 @@ export default function ProjectCard() {
                                 )}
                             </div>
                         </div>
-                    </div>
+                    </details>
                 </section>
             ))}
         </>
