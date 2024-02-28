@@ -10,7 +10,7 @@ export default function ScrollToTopButton() {
             width="20"
             height="20"
             color="#f8fafc"
-            className="flex items-center justify-center rounded-full bg-gray-500/40 shadow-md ring-gray-600/60 hover:ring-2 dark:border-gray-700 dark:bg-slate-900 dark:ring-2 dark:ring-slate-300 dark:hover:ring-2"
+            className="flex items-center justify-center rounded-full bg-gray-500/40 shadow-md ring-gray-600/60 hover:ring-2 focus:scale-110 dark:border-gray-700 dark:bg-slate-900/70 dark:ring-2 dark:ring-slate-300 dark:hover:ring-2"
         />
     );
 }
