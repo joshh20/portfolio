@@ -6,7 +6,7 @@
 
 @layer base {
     body {
-        @apply animate-background bg-gradient-to-l from-cyan-500 to-purple-400 font-nunito dark:from-cyan-900 dark:to-purple-950;
+        @apply bg-gradient-to-l from-cyan-500 to-purple-400 font-nunito motion-safe:animate-background dark:from-cyan-900 dark:to-purple-950;
     }
 }
 

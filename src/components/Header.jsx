@@ -25,7 +25,7 @@ export default function Header({ configData }) {
                                 aria-label={`${myName} is a ${configData.jobTitle}`}
                             >
                                 <div
-                                    className="transform animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-2xl font-bold text-transparent duration-500 ease-in-out hover:translate-x-4 hover:-skew-y-1 hover:scale-125 hover:from-[#D42406] hover:to-[#EBAD25] hover:drop-shadow-md"
+                                    className="transform bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-2xl font-bold text-transparent duration-500 ease-in-out hover:translate-x-4 hover:-skew-y-1 hover:scale-125 hover:from-[#D42406] hover:to-[#EBAD25] hover:drop-shadow-md motion-safe:animate-text"
                                     onMouseOver={handleNameMouseOver}
                                     onMouseOut={handleNameMouseOut}
                                 >
