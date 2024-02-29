@@ -1,7 +1,25 @@
+import { useEffect, useState } from "react";
+import { useDebouncedCallback } from "use-debounce";
+import subscribe from "subscribe-event";
+
 export default function ScrollToTopButton() {
+    // Code to only show button if user has scrolled a certain amount from the top. Uses debouncing.
+    const [scrollPosition, setScrollPosition] = useState(window.scrollY);
+
+    const debouncedScroll = useDebouncedCallback(() => {
+        setScrollPosition(window.scrollY);
+    }, 200);
+
+    useEffect(() => {
+        const unsubscribe = subscribe(window, "scroll", debouncedScroll);
+        return () => {
+            unsubscribe();
+        };
+    });
+
     return (
         <button
-            className="fixed bottom-10 right-10 flex items-center justify-center rounded-full bg-gray-500/40 p-4 text-slate-50 shadow-md ring-gray-600/60 hover:ring-2 active:scale-110 dark:border-gray-700 dark:bg-slate-900/70 dark:ring-2 dark:ring-slate-300 dark:hover:ring-offset-2 dark:active:scale-110"
+            className={`fixed bottom-10 right-10 flex items-center justify-center rounded-full bg-gray-500/40 p-4 text-slate-50 shadow-md ring-gray-600/60 hover:ring-2 active:scale-110 dark:border-gray-700 dark:bg-slate-900/70 dark:ring-2 dark:ring-slate-300 dark:hover:ring-offset-2 dark:active:scale-110 ${scrollPosition >= 300 ? "" : "hidden"}`}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
             <svg
