@@ -21,6 +21,7 @@ export default function ScrollToTopButton() {
         <button
             className={`fixed bottom-10 right-10 flex items-center justify-center rounded-full bg-gray-500/40 p-4 text-slate-50 shadow-md ring-gray-600/60 hover:ring-2 active:scale-110 dark:border-gray-700 dark:bg-slate-900/70 dark:ring-2 dark:ring-slate-300 dark:hover:ring-offset-2 dark:active:scale-110 ${scrollPosition >= 300 ? "" : "hidden"}`}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            aria-label="Scroll to top of page"
         >
             <svg
                 aria-hidden="true"
