@@ -8,7 +8,9 @@ import ScrollToTopButton from "../components/atoms/ScrollToTopButton";
 export const DarkContext = createContext("");
 
 export default function Layout() {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(
+        JSON.parse(localStorage.getItem("isDarkMode")) ?? false,
+    );
 
     return (
         <DarkContext.Provider value={[isDarkMode, setIsDarkMode]}>
