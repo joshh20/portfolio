@@ -26,56 +26,56 @@ export default function ContactForm() {
     };
 
     return (
-        <div className="flex items-center justify-center py-12">
+        <div className="flex items-center justify-center">
             <form
                 ref={form}
                 onSubmit={sendEmail}
-                className="w-full max-w-lg rounded-lg bg-white p-8 shadow-lg"
+                className="w-full max-w-2xl rounded-lg bg-slate-200/10 p-8 shadow-lg transition duration-500 ease-in-out dark:bg-slate-900"
             >
                 <div className="mb-6">
-                    <label className="block text-sm font-medium text-gray-700">
+                    <label className="font-medium text-slate-800 dark:text-slate-300 sm:text-lg">
                         First Name
                     </label>
                     <input
                         type="text"
                         name="firstName"
-                        className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
+                        className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-700 focus:outline-none focus:ring-blue-700 dark:border-gray-700 dark:bg-slate-800 dark:text-slate-300 dark:placeholder-gray-500"
                     />
                 </div>
                 <div className="mb-6">
-                    <label className="block text-sm font-medium text-gray-700">
+                    <label className="font-medium text-slate-800 dark:text-slate-300 sm:text-lg">
                         Last Name
                     </label>
                     <input
                         type="text"
                         name="lastName"
-                        className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
+                        className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-700 focus:outline-none focus:ring-blue-700 dark:border-gray-700 dark:bg-slate-800 dark:text-slate-300 dark:placeholder-gray-500"
                     />
                 </div>
                 <div className="mb-6">
-                    <label className="block text-sm font-medium text-gray-700">
+                    <label className="font-medium text-slate-800 dark:text-slate-300 sm:text-lg">
                         Email
                     </label>
                     <input
                         type="email"
                         name="email"
-                        className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
+                        className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-700 focus:outline-none focus:ring-blue-700 dark:border-gray-700 dark:bg-slate-800 dark:text-slate-300 dark:placeholder-gray-500"
                     />
                 </div>
                 <div className="mb-6">
-                    <label className="block text-sm font-medium text-gray-700">
+                    <label className="font-medium text-slate-800 dark:text-slate-300 sm:text-lg">
                         Message
                     </label>
                     <textarea
                         name="message"
                         rows="4"
-                        className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
+                        className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-700 focus:outline-none focus:ring-blue-700 dark:border-gray-700 dark:bg-slate-800 dark:text-slate-300 dark:placeholder-gray-500"
                     ></textarea>
                 </div>
                 <input
                     type="submit"
                     value="Send"
-                    className="w-full cursor-pointer rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    className="w-full cursor-pointer rounded-md bg-blue-700 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 dark:border-gray-700 dark:hover:ring-offset-2"
                 />
             </form>
         </div>
