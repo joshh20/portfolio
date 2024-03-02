@@ -1,14 +1,14 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 
-export default function Contact() {
+export default function ContactForm() {
     const form = useRef();
 
     const sendEmail = (e) => {
         e.preventDefault();
 
         emailjs
-            .sendForm("service_tbf3for", "template_exyd9lo", form.current, {
+            .sendForm("service_mvp2n1t", "template_exyd9lo", form.current, {
                 publicKey: "M33VdhyGoy6FOroWy",
                 blockHeadless: true,
                 limitRate: {

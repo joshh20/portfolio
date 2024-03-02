@@ -1,6 +1,7 @@
 import Layout from "./layouts/Layout";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 import Test from "./pages/Test";
 import NotFound from "./pages/NotFound";
 import React from "react";
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
         <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="projects" element={<Projects />} />
+            <Route path="contact" element={<Contact />} />
             {/* <Route path="test" element={<Test />} /> */}
             <Route path="*" element={<NotFound />} />
         </Route>,
