@@ -133,23 +133,27 @@ export default function ContactForm() {
                 {errors.message?.type === "required" &&
                     formatErrors("Please share your thoughts 😁")}
 
+                {/* Submission sucess message */}
                 {didSubmissionSucceed === true && (
-                    <div className="mx-auto my-3 max-w-2xl rounded-lg bg-green-100 px-4 py-3 text-center font-medium text-green-800 shadow-sm dark:bg-slate-900 dark:text-green-500">
+                    <div className="mx-auto my-3 max-w-2xl rounded-lg bg-green-100 px-4 py-3 text-center font-medium text-green-800 shadow-sm dark:bg-slate-800 dark:text-green-500">
                         Your message has been sent successfully. I will do my
                         best to reply in a timely manner.
                     </div>
                 )}
+                {/* Submission error message */}
                 {didSubmissionSucceed === false && (
-                    <div className="mx-auto my-3 max-w-2xl rounded-lg bg-red-100 px-4 py-3 text-center font-medium text-red-600 shadow-sm dark:bg-slate-900">
+                    <div className="mx-auto my-3 max-w-2xl rounded-lg bg-red-100 px-4 py-3 text-center font-medium text-red-600 shadow-sm dark:bg-slate-800">
                         Failed to send your message. Please try again later.
                     </div>
                 )}
 
                 {/* Submit */}
-                <input
-                    type="submit"
-                    className="mt-5 w-full cursor-pointer rounded-md bg-blue-700 px-4 py-2 font-medium text-white transition-all hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 dark:border-gray-700 dark:hover:ring-offset-2 sm:text-lg"
-                />
+                {!didSubmissionSucceed && (
+                    <input
+                        type="submit"
+                        className="mt-5 w-full cursor-pointer rounded-md bg-blue-700 px-4 py-2 font-medium text-white transition-all hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 dark:border-gray-700 dark:hover:ring-offset-2 sm:text-lg"
+                    />
+                )}
             </form>
         </>
     );
