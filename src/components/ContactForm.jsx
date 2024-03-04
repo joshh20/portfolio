@@ -75,7 +75,7 @@ export default function ContactForm() {
                 <input
                     type="submit"
                     value="Send"
-                    className="w-full cursor-pointer rounded-md bg-blue-700 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 dark:border-gray-700 dark:hover:ring-offset-2"
+                    className="w-full cursor-pointer rounded-md bg-blue-700 px-4 py-2 font-medium text-white transition-all hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 dark:border-gray-700 dark:hover:ring-offset-2 sm:text-lg"
                 />
             </form>
         </div>
