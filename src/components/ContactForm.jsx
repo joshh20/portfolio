@@ -7,7 +7,24 @@ export default function ContactForm() {
         handleSubmit,
         formState: { errors },
     } = useForm();
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = (formData) => {
+        emailjs
+            .send("service_mvp2n1t", "template_exyd9lo", formData, {
+                publicKey: "M33VdhyGoy6FOroWy",
+                blockHeadless: true,
+                limitRate: {
+                    throttle: 5000,
+                },
+            })
+            .then(
+                (response) => {
+                    console.log("Email sent!", response.status, response.text);
+                },
+                (error) => {
+                    console.log("Email submission failed...", error);
+                },
+            );
+    };
     console.log(errors);
 
     function formatErrors(errorMessage) {
