@@ -37,10 +37,7 @@ export default function ContactForm() {
     // Return JSX with formatted error message
     function formatErrors(errorMessage) {
         return (
-            <p
-                role="alert"
-                className="font-semibold text-red-500 dark:font-normal"
-            >
+            <p role="alert" className="font-semibold text-red-700">
                 {errorMessage}
             </p>
         );
@@ -58,7 +55,7 @@ export default function ContactForm() {
                     placeholder="First name"
                     className={`my-3 w-full rounded-md border border-gray-300 px-3 py-2 placeholder-slate-400 shadow-sm focus:border-blue-700 focus:outline-none focus:ring-blue-700 dark:border-gray-700 dark:bg-slate-800 dark:text-slate-300 dark:placeholder-slate-500 ${
                         errors.firstName
-                            ? "border border-red-500 focus:border-red-700 dark:border-red-500 dark:focus:border-red-700"
+                            ? "ring-1 ring-red-500 focus:ring-2 focus:ring-red-700 dark:focus:ring"
                             : ""
                     }`}
                     {...register("firstName", {
@@ -66,6 +63,7 @@ export default function ContactForm() {
                         maxLength: 80,
                     })}
                     aria-invalid={errors.firstName ? "true" : "false"}
+                    aria-label="First name"
                 />
                 {/* First name error messages */}
                 {errors.firstName?.type === "required" &&
@@ -78,7 +76,7 @@ export default function ContactForm() {
                     placeholder="Last name"
                     className={`my-3 w-full rounded-md border border-gray-300 px-3 py-2 placeholder-slate-400 shadow-sm focus:border-blue-700 focus:outline-none focus:ring-blue-700 dark:border-gray-700 dark:bg-slate-800 dark:text-slate-300 dark:placeholder-slate-500 ${
                         errors.lastName
-                            ? "border border-red-500 focus:border-red-700 dark:border-red-500 dark:focus:border-red-700"
+                            ? "ring-1 ring-red-500 focus:ring-2 focus:ring-red-700 dark:focus:ring"
                             : ""
                     }`}
                     {...register("lastName", {
@@ -86,6 +84,7 @@ export default function ContactForm() {
                         maxLength: 80,
                     })}
                     aria-invalid={errors.lastName ? "true" : "false"}
+                    aria-label="Last name"
                 />
                 {/* Last name error messages */}
                 {errors.lastName?.type === "required" &&
@@ -98,7 +97,7 @@ export default function ContactForm() {
                     placeholder="Email"
                     className={`my-3 w-full rounded-md border border-gray-300 px-3 py-2 placeholder-slate-400 shadow-sm focus:border-blue-700 focus:outline-none focus:ring-blue-700 dark:border-gray-700 dark:bg-slate-800 dark:text-slate-300 dark:placeholder-slate-500 ${
                         errors.email
-                            ? "border border-red-500 focus:border-red-700 dark:border-red-500 dark:focus:border-red-700"
+                            ? "ring-1 ring-red-500 focus:ring-2 focus:ring-red-700 dark:focus:ring"
                             : ""
                     }`}
                     {...register("email", {
@@ -107,6 +106,7 @@ export default function ContactForm() {
                             /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/i,
                     })}
                     aria-invalid={errors.email ? "true" : "false"}
+                    aria-label="Email"
                 />
                 {/* Email error messages */}
                 {errors.email?.type === "required" &&
@@ -124,10 +124,11 @@ export default function ContactForm() {
                     placeholder="Message"
                     className={`my-3 w-full rounded-md border border-gray-300 px-3 py-2 placeholder-slate-400 shadow-sm focus:border-blue-700 focus:outline-none focus:ring-blue-700 dark:border-gray-700 dark:bg-slate-800 dark:text-slate-300 dark:placeholder-slate-500 ${
                         errors.message
-                            ? "border border-red-500 focus:border-red-700 dark:border-red-500 dark:focus:border-red-700"
+                            ? "ring-1 ring-red-500 focus:ring-2 focus:ring-red-700 dark:focus:ring"
                             : ""
                     }`}
                     aria-invalid={errors.message ? "true" : "false"}
+                    aria-label="Message"
                 />
                 {/* Message box error messages */}
                 {errors.message?.type === "required" &&
@@ -148,6 +149,7 @@ export default function ContactForm() {
                 )}
 
                 {/* Submit */}
+                {/* This removes the submit button if we received a successful response from the backend */}
                 {!didSubmissionSucceed && (
                     <input
                         type="submit"

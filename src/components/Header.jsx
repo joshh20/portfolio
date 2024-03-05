@@ -70,7 +70,7 @@ export default function Header({ configData }) {
                                 `${isActive ? "font-bold dark:text-slate-200" : ""}`
                             }
                         >
-                            <button className="rounded-lg border-2 border-gray-300 bg-transparent px-2 py-1 ring-gray-300 transition-all hover:font-bold hover:ring-2 hover:ring-offset-2 dark:border-gray-700 dark:bg-transparent dark:ring-gray-200 dark:hover:ring-2 dark:hover:ring-offset-2">
+                            <button className="rounded-lg border-2 border-gray-300 bg-transparent px-2 py-1 ring-gray-300 hover:font-bold hover:ring-2 hover:ring-offset-2 dark:border-gray-700 dark:bg-transparent dark:ring-gray-200 dark:hover:ring-2 dark:hover:ring-offset-2">
                                 {item.name}
                             </button>
                         </NavLink>
