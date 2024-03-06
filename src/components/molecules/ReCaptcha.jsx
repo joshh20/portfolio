@@ -11,7 +11,9 @@ export default function ReCaptcha({ setCaptchaToken }) {
             sitekey={configData.plugins.recaptcha.sitekey}
             onChange={setCaptchaToken}
             theme={isDarkMode ? "dark" : "light"}
-            className="mx-auto my-3 h-[78px] w-[304px]"
+            size="compact"
+            className="mx-auto my-3 h-[144px] w-[164px]"
+            // className="mx-auto my-3 h-[78px] w-[304px]"
         />
     );
 }
