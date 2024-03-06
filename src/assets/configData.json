@@ -157,5 +157,21 @@
                 "CSS"
             ]
         }
-    ]
+    ],
+    "plugins": {
+        "recaptcha": {
+            "sitekey": "6LeG1Y4pAAAAAOLzzNGKx2rvGB3YT_xiQpnbbnPE"
+        },
+        "emailjs": {
+            "serviceId": "service_mvp2n1t",
+            "templateId": "template_exyd9lo",
+            "options": {
+                "publicKey": "M33VdhyGoy6FOroWy",
+                "blockHeadless": true,
+                "limitRate": {
+                    "throttle": 5000
+                }
+            }
+        }
+    }
 }

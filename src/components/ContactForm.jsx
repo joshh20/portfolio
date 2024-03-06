@@ -1,8 +1,12 @@
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import ReCaptcha from "./molecules/ReCaptcha";
+import { useOutletContext } from "react-router-dom";
 
 export default function ContactForm() {
+    const configData = useOutletContext();
+
     const {
         register,
         handleSubmit,
@@ -11,22 +15,21 @@ export default function ContactForm() {
 
     // State to track whether the submission to EmailJS ended with a status code of 200 meaning success
     const [didSubmissionSucceed, setDidSubmissionSucceed] = useState(null);
+    // State to track ReCaptcha token
+    const [captchaToken, setCaptchaToken] = useState(null);
 
     // Submit data from form to EmailJS
     const onSubmit = async (formData) => {
         try {
             // Await the promise from emailjs.send()
             const response = await emailjs.send(
-                "service_mvp2n1t",
-                "template_exyd9lo",
-                formData,
+                configData.plugins.emailjs.serviceId,
+                configData.plugins.emailjs.templateId,
                 {
-                    publicKey: "M33VdhyGoy6FOroWy",
-                    blockHeadless: true,
-                    limitRate: {
-                        throttle: 5000,
-                    },
+                    ...formData,
+                    "g-recaptcha-response": captchaToken,
                 },
+                configData.plugins.emailjs.options,
             );
             // Handle success
             setDidSubmissionSucceed(true);
@@ -66,7 +69,6 @@ export default function ContactForm() {
             <p role="alert" className="font-semibold text-red-700">
                 {errors.firstName?.message}
             </p>
-
             {/* Last name */}
             <input
                 type="text"
@@ -86,7 +88,6 @@ export default function ContactForm() {
             <p role="alert" className="font-semibold text-red-700">
                 {errors.lastName?.message}
             </p>
-
             {/* Email */}
             <input
                 type="email"
@@ -106,7 +107,6 @@ export default function ContactForm() {
             <p role="alert" className="font-semibold text-red-700">
                 {errors.email?.message}
             </p>
-
             {/* Message */}
             <textarea
                 rows={5}
@@ -127,6 +127,11 @@ export default function ContactForm() {
                 {errors.message?.message}
             </p>
 
+            <ReCaptcha
+                onChange={setCaptchaToken}
+                setCaptchaToken={setCaptchaToken}
+            />
+
             {/* Submit */}
             {/* This removes the submit button if we received a successful response from the backend */}
             {!didSubmissionSucceed && (
@@ -136,7 +141,6 @@ export default function ContactForm() {
                     className="mt-5 w-full cursor-pointer rounded-md bg-blue-700 px-4 py-2 font-medium text-white transition-all hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-gray-700 dark:border-gray-700 dark:hover:ring-offset-2 sm:text-lg"
                 />
             )}
-
             {/* Submission sucess message */}
             {didSubmissionSucceed === true && (
                 <div className="mx-auto my-3 max-w-2xl rounded-lg bg-green-100 px-4 py-3 text-center font-medium text-green-800 shadow-sm dark:bg-slate-800 dark:text-green-500">
