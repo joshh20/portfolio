@@ -137,7 +137,7 @@ export default function ContactForm() {
             {!didSubmissionSucceed && (
                 <input
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || !captchaToken}
                     className="mt-5 w-full cursor-pointer rounded-md bg-blue-700 px-4 py-2 font-medium text-white transition-all hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-gray-700 dark:border-gray-700 dark:hover:ring-offset-2 sm:text-lg"
                 />
             )}
