@@ -48,7 +48,7 @@ export default function ContactForm() {
     return (
         <form
             onSubmit={handleSubmit(onSubmit)}
-            className="mx-auto max-w-2xl rounded-lg bg-slate-300/20 p-8 shadow-lg transition duration-500 ease-in-out dark:bg-slate-900"
+            className="mx-auto max-w-2xl rounded-lg bg-slate-300/20 p-4 shadow-lg transition duration-500 ease-in-out dark:bg-slate-900 sm:p-8"
         >
             {/* First name */}
             <input
