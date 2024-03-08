@@ -6,13 +6,12 @@ import PageHeader from "../components/atoms/PageHeader";
 
 export default function Projects() {
     const configData = useOutletContext();
-    const pageTitle = "Projects";
     useDocumentTitle(
-        `${configData.name.first} ${configData.name.last} - ${pageTitle}`,
+        `${configData.name.first} ${configData.name.last} - ${configData.pages.projectsPage.header}`,
     );
     return (
         <>
-            <PageHeader title={pageTitle} />
+            <PageHeader title={configData.pages.projectsPage.header} />
             <ProjectCard />
         </>
     );

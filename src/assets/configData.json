@@ -18,16 +18,27 @@
             "link": "/contact"
         }
     ],
-    "hero": {
-        "description": "I'm a web developer that loves creating well-designed and responsive websites, ensuring that they look perfect across all screen sizes, from desktops and laptops to tablets and phones!",
-        "listTitle": "For me, a successful website encompasses:",
-        "listItems": [
-            "Excellent design",
-            "Intuitive navigation",
-            "Fast loading times",
-            "An engaging user experience that encourages visitors to stay"
-        ],
-        "image": "Business Headshot.webp"
+    "pages": {
+        "homePage": {
+            "hero": {
+                "description": "I'm a web developer that loves creating well-designed and responsive websites, ensuring that they look perfect across all screen sizes, from desktops and laptops to tablets and phones!",
+                "listTitle": "For me, a successful website encompasses:",
+                "listItems": [
+                    "Excellent design",
+                    "Intuitive navigation",
+                    "Fast loading times",
+                    "An engaging user experience that encourages visitors to stay"
+                ],
+                "image": "Business Headshot.webp"
+            }
+        },
+        "projectsPage": {
+            "header": "Projects"
+        },
+        "contactPage": {
+            "header": "Contact",
+            "subheader": "Whether you're looking to hire, looking for a new website, or an update to your existing website, I'd be happy to hear from you. Just fill out the form below and I'll be in touch."
+        }
     },
     "links": {
         "LinkedIn": "https://www.linkedin.com/in/josh-hittie-657541211",
