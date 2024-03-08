@@ -171,7 +171,7 @@
     ],
     "plugins": {
         "recaptcha": {
-            "sitekey": "6LeG1Y4pAAAAAOLzzNGKx2rvGB3YT_xiQpnbbnPE"
+            "sitekey": "6LdJVo8pAAAAAE3NeEnYu-L5ibbgrU2gKlVGvvb2"
         },
         "emailjs": {
             "serviceId": "service_mvp2n1t",
