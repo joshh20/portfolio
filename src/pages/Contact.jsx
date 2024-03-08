@@ -6,12 +6,13 @@ import PageHeader from "../components/atoms/PageHeader";
 
 export default function Contact() {
     const configData = useOutletContext();
+    const pageTitle = "Contact";
     useDocumentTitle(
-        `${configData.name.first} ${configData.name.last} - Contact`,
+        `${configData.name.first} ${configData.name.last} - ${pageTitle}`,
     );
     return (
         <div className="mx-auto max-w-2xl">
-            <PageHeader title={"Contact"} />
+            <PageHeader title={pageTitle} />
             <ContactForm />
         </div>
     );
