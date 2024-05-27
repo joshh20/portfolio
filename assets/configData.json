@@ -4,6 +4,9 @@
         "last": "Hittie"
     },
     "jobTitle": "Web Developer",
+    "metadata": {
+        "description": "Josh Hittie is a web developer focused on creating refined interfaces and user experiences."
+    },
     "nav": [
         {
             "name": "Home",
@@ -11,11 +14,11 @@
         },
         {
             "name": "Projects",
-            "link": "/projects"
+            "link": "projects"
         },
         {
             "name": "Contact",
-            "link": "/contact"
+            "link": "contact"
         }
     ],
     "pages": {
@@ -143,30 +146,21 @@
             "url": "https://joshhittie.com/van-life/",
             "short": "shorts/van-life.mp4",
             "description": "Van Life is a static website that I created as part of a tutorial while learning React Router by Remix. It allowed me to build true single page applications (SPAs) with navigation between pages. I also got acquanted with Google Firestore, which is a NoSQL database that allows for building Jamstack (serverless) frontends for the web.",
-            "technologiesUsed": [
-                "React Router",
-                "React",
-                "Firebase"
-            ]
+            "technologiesUsed": ["React Router", "React", "Firebase"]
         },
         {
             "name": "Static Tailwind Recipes",
             "url": "https://joshhittie.com/tailwind-recipes/",
             "short": "shorts/tailwind-recipes.mp4",
             "description": "This is a static website that I created while following a tutorial on Tailwind CSS. I would say that Tailwind dramatically increased my enjoyment when writing styling for websites. I enjoyed it so much that I even wrote this website exclusively with Tailwind CSS. It was a pleasure to learn, and makes web development easier.",
-            "technologiesUsed": [
-                "Tailwind CSS"
-            ]
+            "technologiesUsed": ["Tailwind CSS"]
         },
         {
             "name": "Static YouTube Clone",
             "url": "https://joshhittie.com/youtube-clone/",
             "short": "shorts/youtube-clone.mp4",
             "description": "This was one of my first projects related to CSS and styling. I followed a YouTuber who ironically demonstrated how to make a static YouTube clone. I learned how to use flex box, grid, general CSS layouts, badges, breakpoints, and more. It taught me to respect CSS and layouts.",
-            "technologiesUsed": [
-                "HTML",
-                "CSS"
-            ]
+            "technologiesUsed": ["HTML", "CSS"]
         }
     ],
     "plugins": {

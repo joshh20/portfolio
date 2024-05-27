@@ -1,0 +1,38 @@
+---
+title: How to Send and Receive Emails from Your Custom Domain for Free
+date: "2024-05-25"
+description: Set up emails with Gmail, Cloudflare, and SMTP2GO
+---
+
+Recently, I purchased a domain name to create my online portfolio. I also wanted to have a more professional email address to show to employers and businesses. It quickly became apparent, however, that sending and receiving emails from a custom domain is not nearly as easy as sending one from Gmail, or similar services. There are paid options, such as Google Workspaces, but all I really needed was email. I wanted to share what I did so that you too can send and receive emails from your custom domain for free!
+
+The following is a guide I wrote to help anyone connect their custom domain name to their Gmail account. It requires a bit of setup, but is worth it in the end. You may want to quickly skim the steps to make sure it’s within your comfort level before starting. I used Gmail, Cloudflare, and SMTP2GO to make this work, but don’t worry if you don’t have these accounts, I include the steps below one at a time.
+
+## Step 1: Get a Custom Domain Name
+
+First, you need to have a custom domain name. If you already have a domain name, you can proceed to the next step. I purchased my joshhittie.com domain through Cloudflare Registrar, as their pricing is low, they protect your personal information, and they have an email routing feature. It's available here: [Cloudflare Registrar](https://www.cloudflare.com/products/registrar/). You can use any registrar that is reputable, but avoid GoDaddy.
+
+## Step 2: Set Up Email Forwarding
+
+Second, you need to set up email forwarding. This will allow others to send emails to you. If you used a domain registrar that isn't Cloudflare, then you will need to check how to do this with your provider; some will not support this feature.
+
+To set up email routing in your Cloudflare account, follow the steps listed here: [Cloudflare Email Routing](https://developers.cloudflare.com/email-routing/). Note that their email routing is a forwarding system. This means that you can receive emails, but you can't send them. I will explain how to send them in the next step.
+
+## Step 3: Set Up Email Sending with SMTP2GO
+
+Third, you need a way to send emails. There are many providers for this, but I found SMTP2GO to be perfect for my needs. They provide 1,000 free emails a month, which is more than enough for my usage. They had good feedback online as well. You can sign up for an account here: [SMTP2GO](https://www.smtp2go.com/). They have an onboarding process that guides you through each step. One tip I can give you here is when you create your account with them, use your primary email address, in my case, my Gmail. This makes it easier so that you don't lose access to your SMTP2GO account if you ever sell your domain or retire it. You may also want to choose a friendly username for your email, as this is what clients / employers will see. I chose hello@joshhittie.com, but you can pick whatever suits your needs best.
+
+## Step 4: Integrate with Gmail
+
+Fourth, integrating it all together in Gmail.
+
+1. Go back to your Gmail account, and click on the gear icon, then select "See all settings." Go to the "Accounts and Import" tab.
+2. In the "Send mail as" section, click "Add another email address."
+3. Enter your custom domain email address and follow the prompts. There is a checkbox to “Treat as an alias”. In my case, I wanted this, because it will deliver the emails to my custom domain in my Gmail inbox. I can reply to them from Gmail, and they get sent from my custom domain as well. So the recipient sees only your custom domain the entire time, and you don’t have to do any extra work. It’s a very convenient solution!
+4. Gmail will ask for the SMTP server settings for your custom domain email. You can typically find these settings from your email hosting provider. In our case, you want to use the SMTP2GO settings. You can find these in the SMTP2GO dashboard > then Sending > SMTP users. There is a section titled “Connecting via SMTP”. You can copy the server URL, the username, and the password to the Gmail window. Leave the port as 587 and TLS in the Gmail window.
+5. Gmail will send a verification email to your custom domain email address. Since you’ve set up forwarding, this email should arrive in your Gmail inbox. Click the verification link to confirm.
+6. Back in the same Gmail settings section as before, make sure to check “Reply from the same address the message was sent to”. I almost missed this one.
+
+## Step 5: Test It Out
+
+Finally, we're at the point where you get to test it all out! Compose a new message in Gmail, and when you select the Recipients field, you should see an option to choose between your Gmail address and your custom domain address. You can pick the custom domain and send an email with it. Whenever someone replies, that email will come straight to your Gmail inbox. If you have multiple domains, you can simply repeat this process and add all of them to your Gmail. Enjoy having a professional email address for your business!

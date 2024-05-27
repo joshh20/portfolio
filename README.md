@@ -1,6 +1,6 @@
 # Josh Hittie's Portfolio
 
-This is my web portfolio created with React and Tailwind CSS. I hope you enjoy it as much as I enjoyed building it!
+This is my web portfolio created with NextJS and Tailwind CSS. I hope you enjoy it as much as I enjoyed building it!
 
 ## Link
 
