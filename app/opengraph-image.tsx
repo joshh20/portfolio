@@ -4,6 +4,9 @@ import configData from "@/assets/configData.json";
 import businessHeadshot from "@/public/Business Headshot.jpeg";
 import Image from "next/image";
 
+// Appears to be necessary for font support
+export const runtime = "edge";
+
 function generateDynamicBackgroundURL() {
     return `https://picsum.photos/1200/630?blur=2&random=${parseInt(
         Math.random().toString().slice(2)
@@ -11,20 +14,23 @@ function generateDynamicBackgroundURL() {
 }
 
 export default async function OpenGraphImage() {
+    const nunitoRegular = fetch(
+        new URL("@/assets/fonts/Nunito-Regular.ttf", import.meta.url)
+    ).then((res) => res.arrayBuffer());
+
     return new ImageResponse(
         (
             <div
                 tw="flex flex-row w-full h-full items-center justify-center"
                 style={{
-                    backgroundImage: `url('${generateDynamicBackgroundURL()}')`,
+                    // backgroundImage: `url('${generateDynamicBackgroundURL()}')`,
                     backgroundSize: "cover",
+                    fontFamily: "NunitoRegular",
                 }}
             >
                 <div tw="flex items-center">
                     <Image
                         src={businessHeadshot}
-                        height="772"
-                        width="580"
                         alt=""
                         tw="rounded-full w-36 h-36 mr-30"
                         style={{
@@ -60,6 +66,14 @@ export default async function OpenGraphImage() {
             width: 1200,
             height: 630,
             debug: false,
+            fonts: [
+                {
+                    name: "NunitoRegular",
+                    data: await nunitoRegular,
+                    style: "normal",
+                    weight: 400,
+                },
+            ],
         }
     );
 }
