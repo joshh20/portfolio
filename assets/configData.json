@@ -5,7 +5,8 @@
     },
     "jobTitle": "Web Developer",
     "metadata": {
-        "description": "Josh Hittie is a web developer focused on creating refined interfaces and user experiences."
+        "description": "Josh Hittie is a web developer focused on creating refined interfaces and user experiences.",
+        "businessHeadshot": "Business Headshot.avif"
     },
     "nav": [
         {
@@ -32,7 +33,7 @@
                     "Fast loading times",
                     "An engaging user experience that encourages visitors to stay"
                 ],
-                "image": "Business Headshot.webp"
+                "image": "Business Headshot.avif"
             }
         },
         "projectsPage": {

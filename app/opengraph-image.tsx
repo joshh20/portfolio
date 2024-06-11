@@ -1,45 +1,64 @@
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "next/og";
-import configData from "@/configData.json";
-import getEnvVariable from "@/lib/utils/get-env-variable";
+import configData from "@/assets/configData.json";
+import businessHeadshot from "@/public/Business Headshot.jpeg";
+import Image from "next/image";
 
-// Image metadata
-export const alt = `${configData.metadata.title}`;
-export const size = {
-    width: 1200,
-    height: 630,
-};
+function generateDynamicBackgroundURL() {
+    return `https://picsum.photos/1200/630?blur=2&random=${parseInt(
+        Math.random().toString().slice(2)
+    )}`;
+}
 
-export default function OpenGraphImage() {
+export default async function OpenGraphImage() {
     return new ImageResponse(
         (
             <div
-                tw="flex flex-col p-4 justify-center items-center w-full h-full"
+                tw="flex flex-row w-full h-full items-center justify-center"
                 style={{
-                    backgroundImage: `url(${getEnvVariable("HOST_URI")}/${
-                        configData.metadata.opengraphBackground
-                    })`,
-                    backgroundSize: `${size.width} ${size.height}`,
+                    backgroundImage: `url('${generateDynamicBackgroundURL()}')`,
+                    backgroundSize: "cover",
                 }}
             >
-                <img
-                    src={`${getEnvVariable("HOST_URI")}/${
-                        configData.logos.siteLogo.filename
-                    }`}
-                    alt=""
-                    width={configData.logos.siteLogo.size.width}
-                    height={configData.logos.siteLogo.size.height}
-                />
-                <div tw="rounded-lg bg-slate-50/80 text-[#172554] flex flex-col justify-center items-center px-6 mt-10">
-                    <h2 tw="text-4xl font-bold">
-                        {configData.metadata.opengraphTitle}
-                    </h2>
-                    <p tw="text-3xl font-bold">{configData.tournamentDate}</p>
+                <div tw="flex items-center">
+                    <Image
+                        src={businessHeadshot}
+                        height="772"
+                        width="580"
+                        alt=""
+                        tw="rounded-full w-36 h-36 mr-30"
+                        style={{
+                            boxShadow: "0px 4px 12px dimgray",
+                            border: "4px solid lightslategray",
+                        }}
+                    />
+                    <div
+                        tw="flex flex-col items-center rounded-2xl px-12 py-4 bg-slate-50"
+                        style={{
+                            boxShadow: "0px 4px 12px dimgray",
+                            backgroundImage:
+                                "linear-gradient(145deg, rgba(6, 182, 212, 0.3), rgba(192, 132, 252, 0.3))",
+                        }}
+                    >
+                        <h1
+                            tw="text-5xl"
+                            style={{
+                                backgroundImage:
+                                    "linear-gradient(90deg, #14b8a6, #a855f7, #f97316)",
+                                color: "transparent",
+                                backgroundClip: "text",
+                            }}
+                        >
+                            Josh Hittie
+                        </h1>
+                        <h2 tw="text-3xl text-orange-500">Web Developer</h2>
+                    </div>
                 </div>
             </div>
         ),
         {
-            ...size,
+            width: 1200,
+            height: 630,
             debug: false,
         }
     );
