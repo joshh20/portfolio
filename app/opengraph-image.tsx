@@ -32,7 +32,7 @@ export default async function OpenGraphImage() {
                         height={772}
                         width={580}
                         alt=""
-                        tw="rounded-full w-80 h-80 mr-30"
+                        tw="rounded-full w-96 h-96 mr-20"
                         style={{
                             boxShadow: "0px 4px 12px dimgray",
                             border: "4px solid lightslategray",
@@ -48,7 +48,7 @@ export default async function OpenGraphImage() {
                         }}
                     >
                         <h1
-                            tw="text-5xl"
+                            tw="text-8xl"
                             style={{
                                 backgroundImage:
                                     "linear-gradient(90deg, #14b8a6, #a855f7, #f97316)",
@@ -58,7 +58,7 @@ export default async function OpenGraphImage() {
                         >
                             Josh Hittie
                         </h1>
-                        <h2 tw="text-3xl text-orange-500">Web Developer</h2>
+                        <h2 tw="text-6xl text-orange-500">Web Developer</h2>
                     </div>
                 </div>
             </div>
