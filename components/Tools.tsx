@@ -1,4 +1,6 @@
 import { configData } from "@/assets/configData";
+import Image from "next/image";
+
 export default function Tools() {
     return (
         <section>
@@ -14,9 +16,12 @@ export default function Tools() {
                                 key={index}
                                 className="flex flex-col items-center justify-center duration-200 hover:scale-125"
                             >
-                                <img
-                                    src={item.image}
+                                <Image
+                                    src={`/${item.image}`}
+                                    height={256}
+                                    width={256}
                                     className="aspect-square w-16 sm:w-24"
+                                    alt={item.name}
                                     aria-label={item.name}
                                     loading="lazy"
                                 />

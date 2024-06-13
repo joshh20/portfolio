@@ -35,7 +35,11 @@ export const configData = {
                     "Fast loading times",
                     "An engaging user experience that encourages visitors to stay",
                 ],
-                image: "Business Headshot.avif",
+                image: {
+                    name: "Business Headshot.avif",
+                    height: 772,
+                    width: 580,
+                },
             },
         },
         projectsPage: {

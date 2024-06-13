@@ -1,5 +1,6 @@
 // import Links from "../components/Links";
 import { configData } from "@/assets/configData";
+import Image from "next/image";
 
 export default function Hero() {
     return (
@@ -29,9 +30,11 @@ export default function Hero() {
                 </div>
                 {/* Head shot image */}
                 <div className="flex flex-col items-center justify-center gap-8 lg:gap-12">
-                    <img
+                    <Image
                         className="m-auto mt-8 h-64 w-64 rounded-full object-cover ring-4 ring-slate-300 drop-shadow-2xl transition duration-200 hover:scale-105 dark:ring-slate-800 sm:m-0 sm:mt-0 md:h-80 md:w-80 lg:h-96 lg:w-96"
-                        src={configData.pages.homePage.hero.image}
+                        src={`/${configData.pages.homePage.hero.image.name}`}
+                        height={configData.pages.homePage.hero.image.height}
+                        width={configData.pages.homePage.hero.image.width}
                         alt={`${configData.name.first} ${configData.name.last}'s Business Head Shot`}
                     />
                     {/* Social media links */}
