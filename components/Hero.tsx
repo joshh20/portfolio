@@ -1,15 +1,14 @@
-import Links from "../components/Links";
-import { useOutletContext } from "react-router-dom";
+// import Links from "../components/Links";
+import { configData } from "@/assets/configData";
 
 export default function Hero() {
-    const configData = useOutletContext();
     return (
         <section>
             <div className="grid grid-cols-1 leading-relaxed text-slate-800 dark:text-slate-300 sm:grid-cols-2 sm:leading-loose md:gap-x-12">
                 <div className="place-self-center">
                     {/* I'm {first name} {last name} */}
                     <div className="text-4xl font-bold sm:text-6xl">
-                        <p>I'm</p>
+                        <p>I&apos;m</p>
                         <p>
                             {configData.name.first} {configData.name.last}
                         </p>
@@ -23,7 +22,7 @@ export default function Hero() {
                             {configData.pages.homePage.hero.listItems.map(
                                 (item, index) => (
                                     <li key={index}>{item}</li>
-                                ),
+                                )
                             )}
                         </ul>
                     </div>
@@ -36,7 +35,7 @@ export default function Hero() {
                         alt={`${configData.name.first} ${configData.name.last}'s Business Head Shot`}
                     />
                     {/* Social media links */}
-                    <Links />
+                    {/* <Links /> */}
                 </div>
             </div>
         </section>

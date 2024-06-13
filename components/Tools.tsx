@@ -1,6 +1,5 @@
-import { useOutletContext } from "react-router-dom";
+import { configData } from "@/assets/configData";
 export default function Tools() {
-    const configData = useOutletContext();
     return (
         <section>
             <div className="mt-6 rounded-md bg-slate-200/10 p-8 text-slate-800 shadow-md dark:bg-slate-900 dark:text-slate-300 sm:mt-12">
