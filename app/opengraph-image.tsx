@@ -1,8 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "next/og";
 import configData from "@/assets/configData.json";
-import businessHeadshot from "@/public/Business Headshot.jpeg";
-import Image from "next/image";
 
 // Appears to be necessary for font support
 export const runtime = "edge";
@@ -13,29 +11,32 @@ function generateDynamicBackgroundURL() {
     )}`;
 }
 
-export default async function OpenGraphImage() {
-    const nunitoRegular = fetch(
-        new URL("@/assets/fonts/Nunito-Regular.ttf", import.meta.url)
-    ).then((res) => res.arrayBuffer());
+const nunitoRegular = fetch(
+    new URL("@/assets/fonts/Nunito-Regular.ttf", import.meta.url)
+).then((res) => res.arrayBuffer());
 
+export default async function OpenGraphImage() {
     return new ImageResponse(
         (
             <div
                 tw="flex flex-row w-full h-full items-center justify-center"
                 style={{
-                    // backgroundImage: `url('${generateDynamicBackgroundURL()}')`,
+                    backgroundImage: `url('${generateDynamicBackgroundURL()}')`,
                     backgroundSize: "cover",
                     fontFamily: "NunitoRegular",
                 }}
             >
                 <div tw="flex items-center">
-                    <Image
-                        src={businessHeadshot}
+                    <img
+                        src={configData.metadata.businessHeadshot}
+                        height={772}
+                        width={580}
                         alt=""
-                        tw="rounded-full w-36 h-36 mr-30"
+                        tw="rounded-full w-80 h-80 mr-30"
                         style={{
                             boxShadow: "0px 4px 12px dimgray",
                             border: "4px solid lightslategray",
+                            objectFit: "cover",
                         }}
                     />
                     <div
