@@ -1,9 +1,14 @@
+"use client";
+
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import Link from "next/link";
 import useDarkMode from "../hooks/useDarkMode";
 import DarkModeIcon from "./atoms/DarkModeIcon";
+import { configData } from "@/assets/configData";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
 
-export default function Header({ configData }) {
+export default function Header() {
     // useDarkMode Hook
     const [isDarkMode, toggleDarkMode] = useDarkMode();
 
@@ -13,13 +18,16 @@ export default function Header({ configData }) {
     const handleNameMouseOver = () => setNameText(configData.jobTitle);
     const handleNameMouseOut = () => setNameText(myName);
 
+    const pathname = usePathname();
+    console.log(pathname);
+
     return (
         <>
             <header className="bg-slate-50 text-slate-500 dark:bg-slate-900 dark:text-slate-400">
                 <div className="mx-4 sm:mx-12">
                     <div className="mx-auto flex max-w-4xl items-center justify-between py-5">
                         {/* Left side */}
-                        <Link to="/">
+                        <Link href="/">
                             <div
                                 className="flex w-28 whitespace-nowrap"
                                 aria-label={`${myName} is a ${configData.jobTitle}`}
@@ -36,16 +44,20 @@ export default function Header({ configData }) {
                         {/* Center */}
                         <nav className="flex gap-4">
                             {configData.nav.map((item, index) => (
-                                <NavLink
+                                <Link
                                     key={index}
                                     to={item.link}
-                                    className={({ isActive }) =>
-                                        `group hidden text-xl font-medium transition hover:font-semibold hover:drop-shadow-md dark:hover:text-slate-200 sm:block ${isActive ? "text-black dark:text-slate-200" : ""}`
-                                    }
+                                    className={clsx(
+                                        "group hidden text-xl font-medium transition hover:font-semibold hover:drop-shadow-md dark:hover:text-slate-200 sm:block",
+                                        {
+                                            "text-black dark:text-slate-200":
+                                                isActive,
+                                        }
+                                    )}
                                 >
                                     {item.name}
                                     <span className="block h-0.5 max-w-0 bg-purple-400 transition-all duration-500 group-hover:max-w-full "></span>
-                                </NavLink>
+                                </Link>
                             ))}
                         </nav>
                         {/* Right side */}
@@ -63,17 +75,17 @@ export default function Header({ configData }) {
                 {/* Small screen buttons */}
                 <nav className="flex justify-center gap-4 pb-2 sm:hidden">
                     {configData.nav.map((item, index) => (
-                        <NavLink
+                        <Link
                             key={index}
                             to={item.link}
-                            className={({ isActive }) =>
-                                `${isActive ? "font-bold dark:text-slate-200" : ""}`
-                            }
+                            className={clsx({
+                                "font-bold dark:text-slate-200": isActive,
+                            })}
                         >
                             <button className="rounded-lg border-2 border-gray-300 bg-transparent px-2 py-1 ring-gray-300 hover:font-bold hover:ring-2 hover:ring-offset-2 dark:border-gray-700 dark:bg-transparent dark:ring-gray-200 dark:hover:ring-2 dark:hover:ring-offset-2">
                                 {item.name}
                             </button>
-                        </NavLink>
+                        </Link>
                     ))}
                 </nav>
             </header>

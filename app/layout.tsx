@@ -3,6 +3,9 @@ import { Nunito } from "next/font/google";
 import { clsx } from "clsx";
 import { configData } from "@/assets/configData";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import ScrollToTopButton from "@/components/atoms/ScrollToTopButton";
 
 const nunito = Nunito({
     weight: ["300", "400", "500", "600", "700"],
@@ -31,7 +34,12 @@ export default function RootLayout({
                 nunito.className
             )}
         >
-            <body>{children}</body>
+            <Header />
+            <body className="mx-4 max-w-4xl py-8 sm:mx-12 sm:mt-8 lg:mx-auto">
+                {children}
+            </body>
+            <Footer configData={configData} />
+            <ScrollToTopButton />
         </html>
     );
 }
