@@ -27,19 +27,15 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html
-            lang="en"
-            className={clsx(
-                "bg-slate-100 dark:bg-slate-900 dark:text-white max-w-3xl mx-auto py-20 px-4",
-                nunito.className
-            )}
-        >
-            <Header />
-            <body className="mx-4 max-w-4xl py-8 sm:mx-12 sm:mt-8 lg:mx-auto">
-                {children}
+        <html lang="en">
+            <body className={nunito.className}>
+                <Header />
+                <main className="mx-4 max-w-4xl py-8 sm:mx-12 sm:mt-8 lg:mx-auto">
+                    {children}
+                </main>
+                <Footer configData={configData} />
+                <ScrollToTopButton />
             </body>
-            <Footer configData={configData} />
-            <ScrollToTopButton />
         </html>
     );
 }

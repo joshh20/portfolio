@@ -11,11 +11,11 @@ function generateDynamicBackgroundURL() {
     )}`;
 }
 
-const nunitoRegular = fetch(
-    new URL("@/assets/fonts/Nunito-Regular.ttf", import.meta.url)
-).then((res) => res.arrayBuffer());
-
 export default async function OpenGraphImage() {
+    const nunitoRegular = fetch(
+        new URL("@/assets/fonts/Nunito-Regular.ttf", import.meta.url)
+    ).then((res) => res.arrayBuffer());
+
     return new ImageResponse(
         (
             <div

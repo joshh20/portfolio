@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import useDarkMode from "../hooks/useDarkMode";
+// import useDarkMode from "../hooks/useDarkMode";
 import DarkModeIcon from "./atoms/DarkModeIcon";
 import { configData } from "@/assets/configData";
 import { usePathname } from "next/navigation";
@@ -10,7 +10,7 @@ import clsx from "clsx";
 
 export default function Header() {
     // useDarkMode Hook
-    const [isDarkMode, toggleDarkMode] = useDarkMode();
+    // const [isDarkMode, toggleDarkMode] = useDarkMode();
 
     // Set text of name section in Header
     const myName = `${configData.name.first} ${configData.name.last}`;
@@ -19,7 +19,7 @@ export default function Header() {
     const handleNameMouseOut = () => setNameText(myName);
 
     const pathname = usePathname();
-    console.log(pathname);
+    // console.log(pathname);
 
     return (
         <>
@@ -46,12 +46,12 @@ export default function Header() {
                             {configData.nav.map((item, index) => (
                                 <Link
                                     key={index}
-                                    to={item.link}
+                                    href={item.link}
                                     className={clsx(
                                         "group hidden text-xl font-medium transition hover:font-semibold hover:drop-shadow-md dark:hover:text-slate-200 sm:block",
                                         {
                                             "text-black dark:text-slate-200":
-                                                isActive,
+                                                pathname === item.link,
                                         }
                                     )}
                                 >
@@ -65,9 +65,9 @@ export default function Header() {
                             <button
                                 className="flex items-center justify-center rounded-full border-2 border-gray-300 bg-transparent p-2 ring-gray-300 transition-all hover:ring-2 hover:ring-offset-2 dark:border-gray-700 dark:bg-transparent dark:ring-gray-200 dark:hover:ring-2 dark:hover:ring-offset-2"
                                 aria-label="Toggle dark mode"
-                                onClick={toggleDarkMode}
+                                // onClick={toggleDarkMode}
                             >
-                                <DarkModeIcon isDarkMode={isDarkMode} />
+                                {/* <DarkModeIcon isDarkMode={isDarkMode} /> */}
                             </button>
                         </div>
                     </div>
@@ -77,9 +77,10 @@ export default function Header() {
                     {configData.nav.map((item, index) => (
                         <Link
                             key={index}
-                            to={item.link}
+                            href={item.link}
                             className={clsx({
-                                "font-bold dark:text-slate-200": isActive,
+                                "font-bold dark:text-slate-200":
+                                    pathname === item.link,
                             })}
                         >
                             <button className="rounded-lg border-2 border-gray-300 bg-transparent px-2 py-1 ring-gray-300 hover:font-bold hover:ring-2 hover:ring-offset-2 dark:border-gray-700 dark:bg-transparent dark:ring-gray-200 dark:hover:ring-2 dark:hover:ring-offset-2">
