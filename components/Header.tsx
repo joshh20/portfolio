@@ -18,8 +18,8 @@ export default function Header() {
     const handleNameMouseOver = () => setNameText(configData.jobTitle);
     const handleNameMouseOut = () => setNameText(myName);
 
-    const pathname = usePathname();
-    // console.log(pathname);
+    let pathname = usePathname();
+    if (pathname !== "/") pathname = pathname?.slice(1) ?? null;
 
     return (
         <>
