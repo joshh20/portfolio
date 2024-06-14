@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
-import { clsx } from "clsx";
 import { configData } from "@/assets/configData";
 import "./globals.css";
 import Header from "@/components/Header";

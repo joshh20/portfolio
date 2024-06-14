@@ -1,10 +1,9 @@
-import { useContext } from "react";
-import { DarkContext } from "../layouts/Layout";
-import { useOutletContext } from "react-router-dom";
+import { configData } from "@/assets/configData";
 
 export default function Links() {
-    const [isDarkMode] = useContext(DarkContext);
-    const configData = useOutletContext();
+    // const [isDarkMode] = useContext(DarkContext);
+    // const configData = useOutletContext();
+    const isDarkMode = false;
     const iconFillColor = isDarkMode ? "#fff" : "#1e293b";
 
     return (
