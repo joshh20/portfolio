@@ -1,9 +1,9 @@
-import { useOutletContext } from "react-router-dom";
-export default function ProjectCard() {
-    const configData = useOutletContext();
+import { configData } from "@/assets/configData";
+import Image from "next/image";
 
+export default function ProjectCard() {
     const technologiesMap = new Map(
-        configData.technologies.map((tech) => [tech.name, tech]),
+        configData.technologies.map((tech) => [tech.name, tech])
     );
 
     return (
@@ -72,10 +72,13 @@ export default function ProjectCard() {
                                                     key={techIndex}
                                                     className="flex flex-col items-center justify-center duration-200 hover:scale-125"
                                                 >
-                                                    <img
-                                                        src={tech.image}
+                                                    <Image
+                                                        src={`/${tech.image}`}
+                                                        height={256}
+                                                        width={256}
                                                         className="aspect-square w-12 sm:w-20"
                                                         aria-label={tech.name}
+                                                        alt={tech.name}
                                                         loading="lazy"
                                                     />
                                                     <h3 className="mt-4">
@@ -84,7 +87,7 @@ export default function ProjectCard() {
                                                 </div>
                                             )
                                         );
-                                    },
+                                    }
                                 )}
                             </div>
                         </div>
