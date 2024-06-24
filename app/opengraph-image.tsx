@@ -1,15 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "next/og";
 import configData from "@/assets/configData.json";
+import getRandomNum from "@/utils/getRandomNum";
 
 // Appears to be necessary for font support
 export const runtime = "edge";
-
-function generateDynamicBackgroundURL() {
-    return `https://picsum.photos/1200/630?blur=2&random=${parseInt(
-        Math.random().toString().slice(2)
-    )}`;
-}
 
 export default async function OpenGraphImage() {
     const nunitoRegular = fetch(
@@ -21,7 +16,7 @@ export default async function OpenGraphImage() {
             <div
                 tw="flex flex-row w-full h-full items-center justify-center"
                 style={{
-                    backgroundImage: `url('${generateDynamicBackgroundURL()}')`,
+                    backgroundImage: `url(https://picsum.photos/1200/630?blur=2&random=${getRandomNum()}`,
                     backgroundSize: "cover",
                     fontFamily: "NunitoRegular",
                 }}
