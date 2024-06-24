@@ -1,11 +1,14 @@
+"use client";
+
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
-import { useState } from "react";
+import { useActionState, useState } from "react";
 import ReCaptcha from "./molecules/ReCaptcha";
 import { useOutletContext } from "react-router-dom";
 
 export default function ContactForm() {
     const configData = useOutletContext();
+    const [state, formAction] = useActionState();
 
     const {
         register,
@@ -29,7 +32,7 @@ export default function ContactForm() {
                     ...formData,
                     "g-recaptcha-response": captchaToken,
                 },
-                configData.plugins.emailjs.options,
+                configData.plugins.emailjs.options
             );
             // Handle success
             setDidSubmissionSucceed(true);
@@ -42,7 +45,11 @@ export default function ContactForm() {
     };
 
     function formatInputElement(errors, registerName) {
-        return `my-3 w-full rounded-md border border-gray-300 px-3 py-2 placeholder-slate-400 shadow-sm focus:border-blue-700 focus:outline-none focus:ring-blue-700 dark:focus:ring-1 dark:focus:ring-gray-500 dark:border-gray-700 dark:bg-slate-800 dark:text-slate-300 dark:placeholder-slate-500 ${errors[registerName] ? "ring-1 ring-red-500 focus:ring-2 focus:ring-red-700 dark:focus:ring-red-700 dark:focus:ring-[3px]" : ""}`;
+        return `my-3 w-full rounded-md border border-gray-300 px-3 py-2 placeholder-slate-400 shadow-sm focus:border-blue-700 focus:outline-none focus:ring-blue-700 dark:focus:ring-1 dark:focus:ring-gray-500 dark:border-gray-700 dark:bg-slate-800 dark:text-slate-300 dark:placeholder-slate-500 ${
+            errors[registerName]
+                ? "ring-1 ring-red-500 focus:ring-2 focus:ring-red-700 dark:focus:ring-red-700 dark:focus:ring-[3px]"
+                : ""
+        }`;
     }
 
     return (
