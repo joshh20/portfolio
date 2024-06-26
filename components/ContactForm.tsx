@@ -2,14 +2,10 @@
 
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
-import { useActionState, useState } from "react";
-import ReCaptcha from "./molecules/ReCaptcha";
-import { useOutletContext } from "react-router-dom";
+import { useState } from "react";
+import ReCaptcha from "@/components/molecules/ReCaptcha";
 
 export default function ContactForm() {
-    const configData = useOutletContext();
-    const [state, formAction] = useActionState();
-
     const {
         register,
         handleSubmit,
