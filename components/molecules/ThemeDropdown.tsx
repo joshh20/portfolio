@@ -49,7 +49,7 @@ export default function ThemeDropdown({
                 <ThemeIcon resolvedTheme={resolvedTheme} />
             </button>
             {isOpen && (
-                <div className="absolute top-14 py-2 w-32 rounded-md shadow-xl bg-slate-50 text-slate-500 dark:bg-slate-900 dark:text-slate-400">
+                <div className="absolute top-16 -left-[5rem] sm:-left-10 py-2 w-32 rounded-md shadow-xl bg-slate-50 text-slate-500 dark:bg-slate-900 dark:text-slate-400 outline outline-1 outline-gray-300 dark:outline-gray-700 z-10">
                     <option
                         onClick={() => setTheme("light")}
                         className="block px-4 py-2 text-sm hover:bg-slate-200 hover:dark:bg-slate-800 cursor-pointer"
