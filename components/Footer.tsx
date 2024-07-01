@@ -1,4 +1,6 @@
-export default function Footer({ configData }) {
+import { configData } from "@/assets/configData";
+
+export default function Footer() {
     const currentYear = new Date().getFullYear();
     return (
         <footer>
