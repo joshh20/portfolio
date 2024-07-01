@@ -1,6 +1,5 @@
-import businessHeadshot from "@/public/Business Headshot.jpeg";
-import Image from "next/image";
+import ThemeSwitch from "@/app/theme-switch";
 
 export default function Test() {
-    return <Image src={businessHeadshot} height="772" width="580" alt="" />;
+    return <ThemeSwitch />;
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Link from "next/link";
 // import useDarkMode from "../hooks/useDarkMode";
 import DarkModeIcon from "./atoms/DarkModeIcon";
@@ -9,9 +9,6 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
 export default function Header() {
-    // useDarkMode Hook
-    // const [isDarkMode, toggleDarkMode] = useDarkMode();
-
     // Set text of name section in Header
     const myName = `${configData.name.first} ${configData.name.last}`;
     const [nameText, setNameText] = useState(myName);

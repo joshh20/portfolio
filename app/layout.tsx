@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTopButton from "@/components/atoms/ScrollToTopButton";
+import { ThemeProvider } from "next-themes";
 
 const nunito = Nunito({
     weight: ["300", "400", "500", "600", "700"],
@@ -26,13 +27,13 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <body className={nunito.className}>
                 <Header />
                 <main className="mx-4 max-w-4xl py-8 sm:mx-12 sm:mt-8 lg:mx-auto">
-                    {children}
+                    <ThemeProvider attribute="class">{children}</ThemeProvider>
                 </main>
-                <Footer configData={configData} />
+                <Footer />
                 <ScrollToTopButton />
             </body>
         </html>
