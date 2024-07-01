@@ -1,4 +1,4 @@
-import ThemeSwitch from "@/app/theme-switch";
+import ThemeSwitch from "@/components/molecules/ThemeSwitch";
 
 export default function Test() {
     return <ThemeSwitch />;

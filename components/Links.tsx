@@ -1,10 +1,22 @@
+"use client";
+
 import { configData } from "@/assets/configData";
+import { useTheme } from "next-themes";
 
 export default function Links() {
-    // const [isDarkMode] = useContext(DarkContext);
-    // const configData = useOutletContext();
-    const isDarkMode = false;
-    const iconFillColor = isDarkMode ? "#fff" : "#1e293b";
+    const { resolvedTheme } = useTheme();
+
+    let iconFillColor;
+    switch (resolvedTheme) {
+        case "light":
+            iconFillColor = "#1e293b";
+            break;
+        case "dark":
+            iconFillColor = "#fff";
+            break;
+        default:
+            iconFillColor = "#1e293b";
+    }
 
     return (
         <ul className="flex flex-wrap justify-center gap-4 md:justify-end">

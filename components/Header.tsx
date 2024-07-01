@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-// import useDarkMode from "../hooks/useDarkMode";
-import DarkModeIcon from "./atoms/DarkModeIcon";
 import { configData } from "@/assets/configData";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import ThemeSwitch from "@/components/molecules/ThemeSwitch";
 
 export default function Header() {
     // Set text of name section in Header
@@ -58,15 +57,15 @@ export default function Header() {
                             ))}
                         </nav>
                         {/* Right side */}
-                        <div>
+                        <ThemeSwitch />
+                        {/* <div>
                             <button
                                 className="flex items-center justify-center rounded-full border-2 border-gray-300 bg-transparent p-2 ring-gray-300 transition-all hover:ring-2 hover:ring-offset-2 dark:border-gray-700 dark:bg-transparent dark:ring-gray-200 dark:hover:ring-2 dark:hover:ring-offset-2"
                                 aria-label="Toggle dark mode"
                                 // onClick={toggleDarkMode}
                             >
-                                {/* <DarkModeIcon isDarkMode={isDarkMode} /> */}
                             </button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 {/* Small screen buttons */}

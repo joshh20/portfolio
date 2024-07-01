@@ -29,12 +29,14 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
             <body className={nunito.className}>
-                <Header />
-                <main className="mx-4 max-w-4xl py-8 sm:mx-12 sm:mt-8 lg:mx-auto">
-                    <ThemeProvider attribute="class">{children}</ThemeProvider>
-                </main>
-                <Footer />
-                <ScrollToTopButton />
+                <ThemeProvider attribute="class">
+                    <Header />
+                    <main className="mx-4 max-w-4xl py-8 sm:mx-12 sm:mt-8 lg:mx-auto">
+                        {children}
+                    </main>
+                    <Footer />
+                    <ScrollToTopButton />
+                </ThemeProvider>
             </body>
         </html>
     );
