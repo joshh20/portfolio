@@ -46,7 +46,7 @@ export default function Home() {
         <main className="flex flex-col">
             <PageHeader title={configData.pages.blogPage.header} />
             <section>
-                <div className="bg-slate-200/10 p-8 rounded-md shadow-md">
+                <div className="bg-slate-200/20 dark:bg-slate-900 p-8 rounded-md shadow-md">
                     {blogs.map((blog) => (
                         <Link
                             href={"/blog/" + blog.slug}
