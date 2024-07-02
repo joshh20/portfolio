@@ -2,9 +2,20 @@
 
 import { configData } from "@/assets/configData";
 import { useTheme } from "next-themes";
+import { useState, useEffect } from "react";
 
 export default function Links() {
     const { resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    // This is necessary to avoid hydration mismatch errors
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) {
+        return null;
+    }
 
     let iconFillColor;
     switch (resolvedTheme) {
