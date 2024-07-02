@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-
 "use client";
 
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
@@ -20,6 +18,10 @@ export default function ThemeDropdown({
     const dropdownRef = useRef<HTMLDivElement>(null);
 
     const toggleDropdown = () => setIsOpen(!isOpen);
+    function handleSelection(theme: string) {
+        setIsOpen(false);
+        setTheme(theme);
+    }
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -50,24 +52,24 @@ export default function ThemeDropdown({
             </button>
             {isOpen && (
                 <div className="absolute top-16 -left-[5rem] sm:-left-10 py-2 w-32 rounded-md shadow-xl bg-slate-50 text-slate-500 dark:bg-slate-900 dark:text-slate-400 outline outline-1 outline-gray-300 dark:outline-gray-700 z-10">
-                    <option
-                        onClick={() => setTheme("light")}
-                        className="block px-4 py-2 text-sm hover:bg-slate-200 hover:dark:bg-slate-800 cursor-pointer"
+                    <button
+                        onClick={() => handleSelection("light")}
+                        className="block w-full px-4 py-2 text-sm hover:bg-slate-200 hover:dark:bg-slate-800 cursor-pointer"
                     >
                         Light theme
-                    </option>
-                    <option
-                        onClick={() => setTheme("dark")}
-                        className="block px-4 py-2 text-sm hover:bg-slate-200 hover:dark:bg-slate-800 cursor-pointer"
+                    </button>
+                    <button
+                        onClick={() => handleSelection("dark")}
+                        className="block w-full px-4 py-2 text-sm hover:bg-slate-200 hover:dark:bg-slate-800 cursor-pointer"
                     >
                         Dark theme
-                    </option>
-                    <option
-                        onClick={() => setTheme("system")}
-                        className="block px-4 py-2 text-sm hover:bg-slate-200 hover:dark:bg-slate-800 cursor-pointer"
+                    </button>
+                    <button
+                        onClick={() => handleSelection("system")}
+                        className="block w-full px-4 py-2 text-sm hover:bg-slate-200 hover:dark:bg-slate-800 cursor-pointer"
                     >
                         System theme
-                    </option>
+                    </button>
                 </div>
             )}
         </div>

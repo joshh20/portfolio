@@ -57,12 +57,12 @@ export default function Header() {
                             ))}
                         </nav>
                         {/* Right side */}
-                        <button
+                        <div
                             className="rounded-full border-2 border-gray-300 bg-transparent ring-gray-300 transition-all hover:ring-2 hover:ring-offset-2 dark:border-gray-700 dark:bg-transparent dark:ring-gray-200 dark:hover:ring-2 dark:hover:ring-offset-2"
                             aria-label="Toggle theme color"
                         >
                             <ThemeSwitch />
-                        </button>
+                        </div>
                     </div>
                 </div>
                 {/* Small screen buttons */}
