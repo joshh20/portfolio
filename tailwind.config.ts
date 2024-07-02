@@ -28,6 +28,13 @@ const config: Config = {
                     },
                 },
             },
+            typography: {
+                DEFAULT: {
+                    css: {
+                        "--tw-prose-body": "text-slate-800",
+                    },
+                },
+            },
         },
     },
     plugins: [require("@tailwindcss/typography")],
