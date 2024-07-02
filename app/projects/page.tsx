@@ -1,8 +1,9 @@
 import { configData } from "@/assets/configData";
 import ProjectCard from "@/components/ProjectCard";
 import PageHeader from "@/components/atoms/PageHeader";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
     title: "Projects",
 };
 

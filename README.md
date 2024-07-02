@@ -4,4 +4,4 @@ This is my web portfolio created with NextJS and Tailwind CSS. I hope you enjoy 
 
 ## Link
 
-The site is hosted at [joshhittie.com](https://joshhittie.com) thanks to GitHub Pages.
+The site is hosted at [joshhittie.com](https://joshhittie.com) with [Dokploy](https://dokploy.com/).

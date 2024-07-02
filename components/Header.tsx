@@ -15,7 +15,9 @@ export default function Header() {
     const handleNameMouseOut = () => setNameText(myName);
 
     let pathname = usePathname();
-    if (pathname !== "/") pathname = pathname?.slice(1) ?? null;
+    if (pathname !== "/") {
+        pathname = "/" + pathname?.split("/")[1] ?? "";
+    }
 
     return (
         <>
@@ -66,7 +68,7 @@ export default function Header() {
                     </div>
                 </div>
                 {/* Small screen buttons */}
-                <nav className="flex justify-center gap-4 pb-2 sm:hidden">
+                <nav className="flex flex-wrap justify-center gap-3 mx-2 pb-2 sm:hidden">
                     {configData.nav.map((item, index) => (
                         <Link
                             key={index}

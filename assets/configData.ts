@@ -16,11 +16,15 @@ export const configData = {
         },
         {
             name: "Projects",
-            link: "projects",
+            link: "/projects",
+        },
+        {
+            name: "Blog",
+            link: "/blog",
         },
         {
             name: "Contact",
-            link: "contact",
+            link: "/contact",
         },
     ],
     pages: {
@@ -44,6 +48,9 @@ export const configData = {
         },
         projectsPage: {
             header: "Projects",
+        },
+        blogPage: {
+            header: "Blog",
         },
         contactPage: {
             header: "Contact",

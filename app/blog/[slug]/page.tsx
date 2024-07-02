@@ -44,7 +44,7 @@ export default function Post({ params }: any) {
 
     return (
         <div className="prose prose-sm md:prose-base lg:prose-lg prose-zinc dark:prose-invert mx-auto">
-            <Link href=".." className="block mb-4">
+            <Link href="/blog" className="block mb-4">
                 Go back
             </Link>
             <article>
@@ -55,7 +55,7 @@ export default function Post({ params }: any) {
 
                 <MDXRemote source={props.content} />
             </article>
-            <Link href=".." className="block mt-8">
+            <Link href="/blog" className="block mt-8">
                 Go back
             </Link>
         </div>
