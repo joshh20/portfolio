@@ -43,30 +43,30 @@ export default function Home() {
     });
 
     return (
-        <main className="flex flex-col">
+        <main className="">
             <PageHeader title={configData.pages.blogPage.header} />
             <section>
                 <div className="bg-slate-200/10 dark:bg-slate-900 p-8 rounded-md shadow-md">
                     {blogs.map((blog) => (
-                        <Link
-                            href={"/blog/" + blog.slug}
-                            passHref
-                            key={blog.slug}
-                        >
-                            <article className="py-2 flex justify-between align-middle gap-2">
-                                <div>
-                                    <h3 className="text-lg font-bold">
-                                        {blog.meta.title}
-                                    </h3>
-                                    <p className="text-slate-800 dark:text-slate-400">
-                                        {blog.meta.description}
-                                    </p>
-                                </div>
-                                <div className="my-auto text-slate-800 dark:text-slate-400">
-                                    <p>{getRelativeTime(blog.meta.date)}</p>
-                                </div>
-                            </article>
-                        </Link>
+                        <div key={blog.slug} className="mb-8 last:mb-0">
+                            <Link href={"/blog/" + blog.slug} passHref>
+                                <article className="py-2 grid sm:grid-cols-6 text-slate-800 dark:text-slate-300">
+                                    <div className="col-span-4">
+                                        <h3 className="text-xl font-bold mb-2">
+                                            {blog.meta.title}
+                                        </h3>
+                                        <h4 className="font-bold sm:hidden mb-1">
+                                            Posted{" "}
+                                            {getRelativeTime(blog.meta.date)}
+                                        </h4>
+                                        <p>{blog.meta.description}</p>
+                                    </div>
+                                    <div className="col-span-2 font-bold justify-self-end hidden sm:inline-block">
+                                        <p>{getRelativeTime(blog.meta.date)}</p>
+                                    </div>
+                                </article>
+                            </Link>
+                        </div>
                     ))}
                 </div>
             </section>
