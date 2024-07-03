@@ -169,6 +169,14 @@ export const configData = {
     ],
     projects: [
         {
+            name: "Patriot Par 3 Rebuild",
+            url: "https://par3.joshhittie.com",
+            short: "/shorts/patriot-par-3.mp4",
+            description:
+                "A local golf tournament charity needed a rebuild for their website. They suffered from slow page loading speeds, poor SEO, and a messy layout. I decided to use NextJS for this task to get the frontend benefits of a JavaScript framework, but still have great SEO due to Server Side Rendering. \n\nOne of the problems I ran into while building the new website was that I hadn't built an image carousel before. I realized that there are a few problems that you need to solve to make one of these. The first problem is that you have to design the layout and behavior. Fortunately, I found a great package on NPM called react-image-gallery that did all of the CSS. This was a huge help, but I still had to link all of the photos with the image gallery component. I wrote some TypeScript code and used some NodeJS to iterate through the photos, sort the photos by filename, and then write the filenames to a JSON file for later use. \n\nThere were just two more problems. This image gallery also has thumbnails at the bottom of the container, but it can't dynamically resize the images. Also, some of the images were of different dimensions, and they were overflowing the image gallery container. To solve this, I used Sharp, which is a NodeJS library that can resize, rotate, and convert photos, among other capabilities. I was now able to pick a standard size for all photos. Ones that were too large could be shrunken down, and ones that were too small would have a black inner border applied. \n\nI also needed to build a contact form for the website. There are a lot of form libraries, but I had already created a form with React Hook Form and Tailwind previously. I decided I would try out the React Server Actions pattern, which allows you to forego creating a REST API manually. You just write functions that only execute on your server, and then return the result to your client component. I also implemented Google ReCaptcha Enterprise to prevent bot submissions without adding user friction, as this version of ReCaptcha operates seamlessly without requiring any input from visitors. No more annoying checkboxes! \n\nThe final result not only has significantly more information on each page, but it also has a much easier-to-read layout. The new website loads significantly faster than the WordPress site they had before. Google PageSpeed index reports that the new site loads twice as fast.",
+            technologiesUsed: ["NextJS", "React", "TypeScript", "Tailwind CSS"],
+        },
+        {
             name: "Vid Vortex",
             url: "https://vidvortex.com",
             short: "/shorts/vid-vortex.mp4",
@@ -183,30 +191,6 @@ export const configData = {
                 "Docker",
                 "Bootstrap",
             ],
-        },
-        {
-            name: "Van Life Mockup",
-            url: "https://joshhittie.com/van-life/",
-            short: "shorts/van-life.mp4",
-            description:
-                "Van Life is a static website that I created as part of a tutorial while learning React Router by Remix. It allowed me to build true single page applications (SPAs) with navigation between pages. I also got acquanted with Google Firestore, which is a NoSQL database that allows for building Jamstack (serverless) frontends for the web.",
-            technologiesUsed: ["React Router", "React", "Firebase"],
-        },
-        {
-            name: "Static Tailwind Recipes",
-            url: "https://joshhittie.com/tailwind-recipes/",
-            short: "shorts/tailwind-recipes.mp4",
-            description:
-                "This is a static website that I created while following a tutorial on Tailwind CSS. I would say that Tailwind dramatically increased my enjoyment when writing styling for websites. I enjoyed it so much that I even wrote this website exclusively with Tailwind CSS. It was a pleasure to learn, and makes web development easier.",
-            technologiesUsed: ["Tailwind CSS"],
-        },
-        {
-            name: "Static YouTube Clone",
-            url: "https://joshhittie.com/youtube-clone/",
-            short: "shorts/youtube-clone.mp4",
-            description:
-                "This was one of my first projects related to CSS and styling. I followed a YouTuber who ironically demonstrated how to make a static YouTube clone. I learned how to use flex box, grid, general CSS layouts, badges, breakpoints, and more. It taught me to respect CSS and layouts.",
-            technologiesUsed: ["HTML", "CSS"],
         },
     ],
     plugins: {
