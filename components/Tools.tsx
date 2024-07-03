@@ -17,7 +17,7 @@ export default function Tools() {
                                 className="flex flex-col items-center justify-center duration-200 hover:scale-125"
                             >
                                 <Image
-                                    src={`/${item.image}`}
+                                    src={item.image}
                                     height={256}
                                     width={256}
                                     className="aspect-square w-16 sm:w-24"

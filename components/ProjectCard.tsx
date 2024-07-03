@@ -73,7 +73,7 @@ export default function ProjectCard() {
                                                     className="flex flex-col items-center justify-center duration-200 hover:scale-125"
                                                 >
                                                     <Image
-                                                        src={`/${tech.image}`}
+                                                        src={tech.image}
                                                         height={256}
                                                         width={256}
                                                         className="aspect-square w-12 sm:w-20"

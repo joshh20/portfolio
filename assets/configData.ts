@@ -66,77 +66,77 @@ export const configData = {
     technologies: [
         {
             name: "React",
-            image: "logos/React-logo.webp",
+            image: "/logos/React-logo.webp",
             highlight: true,
         },
         {
             name: "JavaScript",
-            image: "logos/JavaScript-logo.webp",
+            image: "/logos/JavaScript-logo.webp",
             highlight: true,
         },
         {
             name: "Tailwind CSS",
-            image: "logos/Tailwind-logo.webp",
+            image: "/logos/Tailwind-logo.webp",
             highlight: true,
         },
         {
             name: "Figma",
-            image: "logos/Figma-logo.webp",
+            image: "/logos/Figma-logo.webp",
             highlight: true,
         },
         {
             name: "Docker",
-            image: "logos/Docker-logo.webp",
+            image: "/logos/Docker-logo.webp",
             highlight: true,
         },
         {
             name: "Python",
-            image: "logos/Python-logo.webp",
+            image: "/logos/Python-logo.webp",
             highlight: true,
         },
         {
             name: "Flask",
-            image: "logos/Flask-logo.webp",
+            image: "/logos/Flask-logo.webp",
             highlight: false,
         },
         {
             name: "Celery",
-            image: "logos/Celery-logo.webp",
+            image: "/logos/Celery-logo.webp",
             highlight: false,
         },
         {
             name: "Redis",
-            image: "logos/Redis-logo.webp",
+            image: "/logos/Redis-logo.webp",
             highlight: false,
         },
         {
             name: "Bootstrap",
-            image: "logos/Bootstrap-logo.webp",
+            image: "/logos/Bootstrap-logo.webp",
             highlight: false,
         },
         {
             name: "HTML",
-            image: "logos/HTML-logo.webp",
+            image: "/logos/HTML-logo.webp",
             highlight: false,
         },
         {
             name: "CSS",
-            image: "logos/CSS-logo.webp",
+            image: "/logos/CSS-logo.webp",
             highlight: false,
         },
         {
             name: "React Router",
-            image: "logos/ReactRouter-logo.webp",
+            image: "/logos/ReactRouter-logo.webp",
             highlight: false,
         },
         {
             name: "Firebase",
-            image: "logos/Firebase-logo.webp",
+            image: "/logos/Firebase-logo.webp",
             highlight: false,
         },
         {
             name: "FFmpeg",
-            image: "logos/FFmpeg-logo.webp",
+            image: "/logos/FFmpeg-logo.webp",
             highlight: false,
         },
     ],
@@ -144,7 +144,7 @@ export const configData = {
         {
             name: "Vid Vortex",
             url: "https://vidvortex.com",
-            short: "shorts/vid-vortex.mp4",
+            short: "/shorts/vid-vortex.mp4",
             description:
                 "Vid Vortex is a website that I created while learning Python and Flask. I frequently used YouTube video downloading websites and would walk away from them feeling frustrated by the lack of high resolution video, multiple codecs, or even sound! I knew that I could do better, so I created Vid Vortex. \n\nYou simply paste the URL of the YouTube video that you want to download, hit submit, select your resolution, and press confirm. Within seconds, you're able to download the video to your device. It's perfect for when traveling on road trips, or in airplanes where network connectivity is limited.",
             technologiesUsed: [

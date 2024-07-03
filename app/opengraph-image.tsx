@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "next/og";
-import configData from "@/assets/configData.json";
+import { configData } from "@/assets/configData";
 import getRandomNum from "@/utils/getRandomNum";
 
 // Appears to be necessary for font support
