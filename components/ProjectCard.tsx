@@ -1,5 +1,6 @@
 import { configData } from "@/assets/configData";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProjectCard() {
     const technologiesMap = new Map(
@@ -68,8 +69,11 @@ export default function ProjectCard() {
                                             technologiesMap.get(techName);
                                         return (
                                             tech && (
-                                                <div
+                                                <Link
                                                     key={techIndex}
+                                                    href={tech.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
                                                     className="flex flex-col items-center justify-center duration-200 hover:scale-125"
                                                 >
                                                     <Image
@@ -84,7 +88,7 @@ export default function ProjectCard() {
                                                     <h3 className="mt-4">
                                                         {tech.name}
                                                     </h3>
-                                                </div>
+                                                </Link>
                                             )
                                         );
                                     }

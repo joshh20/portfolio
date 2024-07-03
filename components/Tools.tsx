@@ -1,5 +1,6 @@
 import { configData } from "@/assets/configData";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Tools() {
     return (
@@ -12,8 +13,11 @@ export default function Tools() {
                     {configData.technologies
                         .filter((item) => item.highlight)
                         .map((item, index) => (
-                            <div
+                            <Link
                                 key={index}
+                                href={item.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="flex flex-col items-center justify-center duration-200 hover:scale-125"
                             >
                                 <Image
@@ -26,7 +30,7 @@ export default function Tools() {
                                     loading="lazy"
                                 />
                                 <h3 className="mt-4">{item.name}</h3>
-                            </div>
+                            </Link>
                         ))}
                 </div>
             </div>
