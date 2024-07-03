@@ -43,7 +43,7 @@ export default function Post({ params }: any) {
     const props = getPost(params);
 
     return (
-        <div className="prose prose-base lg:prose-lg dark:prose-invert mx-auto bg-slate-200/20 dark:bg-slate-900 p-8 rounded-md shadow-md">
+        <div className="prose prose-base lg:prose-lg dark:prose-invert mx-auto bg-slate-200/10 dark:bg-slate-900 p-8 rounded-md shadow-md">
             <Link href="/blog" className="block mb-4">
                 Go back
             </Link>

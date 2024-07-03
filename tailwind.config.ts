@@ -32,6 +32,8 @@ const config: Config = {
                 DEFAULT: {
                     css: {
                         "--tw-prose-body": "text-slate-800",
+                        "--tw-prose-counters": "text-slate-800",
+                        "--tw-prose-bullets": "text-slate-800",
                     },
                 },
             },

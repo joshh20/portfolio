@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import ThemeDropdown from "@/components/molecules/ThemeDropdown";
+import ThemeDropdown from "@/components/ThemeDropdown";
 
 export default function ThemeSwitch() {
     const [mounted, setMounted] = useState(false);

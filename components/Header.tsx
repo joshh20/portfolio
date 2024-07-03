@@ -5,7 +5,7 @@ import Link from "next/link";
 import { configData } from "@/assets/configData";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import ThemeSwitch from "@/components/molecules/ThemeSwitch";
+import ThemeSwitch from "@/components/ThemeSwitch";
 
 export default function Header() {
     // Set text of name section in Header
