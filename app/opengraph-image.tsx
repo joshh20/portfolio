@@ -23,9 +23,12 @@ export default async function OpenGraphImage() {
             >
                 <div tw="flex items-center">
                     <img
-                        src={configData.metadata.businessHeadshot}
-                        height={772}
-                        width={580}
+                        src={
+                            configData.metadata.hostname +
+                            configData.metadata.businessHeadshot.filenameJpeg
+                        }
+                        height={configData.metadata.businessHeadshot.height}
+                        width={configData.metadata.businessHeadshot.width}
                         alt=""
                         tw="rounded-full w-96 h-96 mr-20"
                         style={{
