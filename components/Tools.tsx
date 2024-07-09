@@ -28,6 +28,7 @@ export default function Tools() {
                                     alt={item.name}
                                     aria-label={item.name}
                                     loading="lazy"
+                                    unoptimized
                                 />
                                 <h3 className="mt-4">{item.name}</h3>
                             </Link>
