@@ -80,6 +80,7 @@ export const configData = {
         {
             name: "NextJS",
             image: "/logos/NextJS-logo.webp",
+            imageDark: "/logos/NextJS-dark-logo.webp",
             link: "https://nextjs.org/",
             highlight: true,
         },
