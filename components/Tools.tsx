@@ -9,7 +9,7 @@ export default function Tools() {
                 <h2 className="mb-8 text-center text-2xl font-semibold text-slate-800 dark:text-slate-300">
                     Some languages and tools that I use
                 </h2>
-                <div className="mx-auto flex flex-wrap items-center justify-center gap-x-12 gap-y-8 font-semibold">
+                <div className="mx-auto flex flex-wrap place-content-around gap-x-12 gap-y-8 font-semibold">
                     {configData.technologies
                         .filter((item) => item.highlight)
                         .map((item, index) => (
@@ -24,7 +24,7 @@ export default function Tools() {
                                     src={item.image}
                                     height={256}
                                     width={256}
-                                    className="aspect-square w-16 sm:w-24"
+                                    className="size-16 sm:size-24"
                                     alt={item.name}
                                     aria-label={item.name}
                                     loading="lazy"
