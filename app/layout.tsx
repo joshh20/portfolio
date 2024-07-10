@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     },
     description: configData.metadata.description,
     authors: [{ name: `${configData.name.first} ${configData.name.last}` }],
+    metadataBase: new URL(process.env.HOST_URI as string),
 };
 
 export default function RootLayout({
