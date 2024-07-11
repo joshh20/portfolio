@@ -47,6 +47,7 @@ export default function ThemeDropdown({
             <button
                 onClick={toggleDropdown}
                 className="p-2 bg-slate-50 text-slate-500 dark:bg-slate-900 dark:text-slate-400 rounded-full"
+                aria-label="Switch theme color mode"
             >
                 <ThemeIcon resolvedTheme={resolvedTheme} />
             </button>

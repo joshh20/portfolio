@@ -25,7 +25,7 @@ export default function Tools() {
                                     height={256}
                                     width={256}
                                     className="size-16 sm:size-24"
-                                    alt={item.name}
+                                    alt=""
                                     aria-label={item.name}
                                     loading="lazy"
                                 />
