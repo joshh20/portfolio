@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import getIPGeoLocation from "@/utils/getIPGeoLocation";
 
 export async function middleware(request: NextRequest) {
     const ip = request.headers.get("CF-Connecting-IP");
