@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function middleware(request: NextRequest) {
+    if (process.env.NODE_ENV === "development") return;
+
     const ip = request.headers.get("CF-Connecting-IP");
     const country = request.headers.get("CF-IPCountry");
     const url = JSON.stringify(request.url);

@@ -1,0 +1,29 @@
+// This is currently not working as intended. I need to cache the result of the API lookup, but can't get NextJS caching to work right now. Without it, we will very easily hit the API limit
+
+import { RateLimiter } from "limiter";
+
+const limiter = new RateLimiter({
+    tokensPerInterval: 45,
+    interval: "minute",
+    fireImmediately: true,
+});
+
+export default async function getIPGeoLocation(ip: string) {
+    const remainingRequests = await limiter.removeTokens(1);
+    if (remainingRequests <= 0)
+        return { error: "API limit exhausted", remainingRequests };
+
+    const response = await fetch(
+        `http://ip-api.com/json/${ip}?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,isp,org,as,asname,mobile,proxy,hosting,query`
+    );
+
+    if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+
+    const data = await response.json();
+    // return { ...data, remainingRequests: Math.floor(remainingRequests) };
+    return {
+        ...data,
+        trueRemaining: response.headers.get("X-Rl"),
+        estimatedRemaining: Math.floor(remainingRequests),
+    };
+}
