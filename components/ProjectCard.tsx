@@ -1,8 +1,25 @@
+"use client";
+
 import { configData } from "@/assets/configData";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import ImageDarkAware from "./ImageDarkAware";
 
 export default function ProjectCard() {
+    const { resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    // This is necessary to avoid hydration mismatch errors
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) {
+        return null;
+    }
+
     const technologiesMap = new Map(
         configData.technologies.map((tech) => [tech.name, tech])
     );
@@ -76,14 +93,9 @@ export default function ProjectCard() {
                                                     rel="noopener noreferrer"
                                                     className="flex flex-col items-center justify-center duration-200 hover:scale-125"
                                                 >
-                                                    <Image
-                                                        src={tech.image}
-                                                        height={256}
-                                                        width={256}
-                                                        className="aspect-square w-12 sm:w-20"
-                                                        aria-label={tech.name}
-                                                        alt={tech.name}
-                                                        loading="lazy"
+                                                    <ImageDarkAware
+                                                        item={tech}
+                                                        className="size-12 sm:size-20"
                                                     />
                                                     <h3 className="mt-4">
                                                         {tech.name}

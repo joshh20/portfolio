@@ -153,6 +153,7 @@ export const configData = {
         {
             name: "React Router",
             image: "/logos/ReactRouter-logo.webp",
+            imageDark: "/logos/ReactRouter-dark-logo.webp",
             link: "https://reactrouter.com/",
             highlight: false,
         },

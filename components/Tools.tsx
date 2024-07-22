@@ -1,8 +1,24 @@
+"use client";
+
 import { configData } from "@/assets/configData";
-import Image from "next/image";
+import { useTheme } from "next-themes";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import ImageDarkAware from "./ImageDarkAware";
 
 export default function Tools() {
+    const { resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    // This is necessary to avoid hydration mismatch errors
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) {
+        return null;
+    }
+
     return (
         <section>
             <div className="mt-6 rounded-md bg-slate-200/10 p-8 text-slate-800 shadow-md dark:bg-slate-900 dark:text-slate-300 sm:mt-12">
@@ -20,14 +36,9 @@ export default function Tools() {
                                 rel="noopener noreferrer"
                                 className="flex flex-col items-center justify-center duration-200 hover:scale-125"
                             >
-                                <Image
-                                    src={item.image}
-                                    height={256}
-                                    width={256}
+                                <ImageDarkAware
+                                    item={item}
                                     className="size-16 sm:size-24"
-                                    alt=""
-                                    aria-label={item.name}
-                                    loading="lazy"
                                 />
                                 <h3 className="mt-4">{item.name}</h3>
                             </Link>
