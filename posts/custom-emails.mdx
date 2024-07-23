@@ -10,17 +10,44 @@ The following is a guide I wrote to help anyone connect their custom domain name
 
 ## Step 1: Get a Custom Domain Name
 
-First, you need to have a custom domain name. If you already have a domain name, you can proceed to the next step. I purchased my joshhittie.com domain through Cloudflare Registrar, as their pricing is low, they protect your personal information, and they have an email routing feature. It's available here: [Cloudflare Registrar](https://www.cloudflare.com/products/registrar/). You can use any registrar that is reputable, but avoid GoDaddy.
+<a href="https://www.cloudflare.com/products/registrar/" target="_blank">
+    <img
+        src="/blog/custom-emails/cloudflare-registrar.avif"
+        alt="Cloudflare Registrar"
+        title="Cloudflare Registrar"
+    />
+</a>
+
+First, you need to have a custom domain name. If you already have a domain name, you can proceed to the next step. I purchased my joshhittie.com domain through Cloudflare Registrar, as their pricing is at-cost, they protect your personal information, and they have an email routing feature. It's available here: <a href="https://www.cloudflare.com/products/registrar/" target="_blank">Cloudflare Registrar</a>. You can use any registrar that is reputable, but avoid GoDaddy.
+
+Try to pick a domain name that is unique to you and that can be remembered easily. .com domains have been the standard for a long time, but many of them have been taken. If you have a common first and last name, it may be hard to find your exact name. However, maybe you really want to have your exact name in the domain. In that case, you could consider checking out other TLDs that are available. There are now hundreds of different ones available such as .dev, .photography, .builders, and more. Finding the perfect domain name matters, and this is where your creativity will be helpful to try to think of a suitable domain that represents you well.
 
 ## Step 2: Set Up Email Forwarding
 
+<a
+    href="https://developers.cloudflare.com/email-routing/get-started/enable-email-routing/"
+    target="_blank"
+>
+    <img
+        src="/blog/custom-emails/cloudflare-email-routing.avif"
+        alt="Cloudflare Email Routing"
+        title="Cloudflare Email Routing"
+    />
+</a>
+
 Second, you need to set up email forwarding. This will allow others to send emails to you. If you used a domain registrar that isn't Cloudflare, then you will need to check how to do this with your provider; some will not support this feature.
 
-To set up email routing in your Cloudflare account, follow the steps listed here: [Cloudflare Email Routing](https://developers.cloudflare.com/email-routing/). Note that their email routing is a forwarding system. This means that you can receive emails, but you can't send them. I will explain how to send them in the next step.
+To set up email routing in your Cloudflare account, follow the steps listed here: <a href="https://developers.cloudflare.com/email-routing/get-started/enable-email-routing/" target="_blank">Cloudflare Email Routing</a>. Note that their email routing is a forwarding system. This means that you can receive emails, but you can't send them. I will explain how to send them in the next step.
+
+The goal in this step is to forward emails from your domain name to your Gmail address. So in my case I used hello@mydomain.com as the custom address. I put the destination address as my Gmail email address. You may also want to choose a friendly username for your email, as this is what clients / employers will see. I chose hello@mydomain.com, but you can pick whatever suits your needs best.
 
 ## Step 3: Set Up Email Sending with SMTP2GO
 
-Third, you need a way to send emails. There are many providers for this, but I found SMTP2GO to be perfect for my needs. They provide 1,000 free emails a month, which is more than enough for my usage. They had good feedback online as well. You can sign up for an account here: [SMTP2GO](https://www.smtp2go.com/). They have an onboarding process that guides you through each step. One tip I can give you here is when you create your account with them, use your primary email address, in my case, my Gmail. This makes it easier so that you don't lose access to your SMTP2GO account if you ever sell your domain or retire it. You may also want to choose a friendly username for your email, as this is what clients / employers will see. I chose hello@mydomain.com, but you can pick whatever suits your needs best.
+<a href="https://www.smtp2go.com/" target="_blank">
+    <img src="/blog/custom-emails/smtp2go.avif" alt="SMTP2GO" title="SMTP2GO" />
+</a>
+
+Third, you need a way to send emails. There are many providers for this, but I found SMTP2GO to be perfect for my needs. They provide 1,000 free emails a month, which is more than enough for my usage. They had good feedback online as well. You can sign up for an account here: <a href="https://www.smtp2go.com/" target="_blank">SMTP2GO</a>. They have an onboarding process that guides you through each step. One tip I can give you here is when you create your account with them, use your primary email address, in my case, my Gmail. This makes it easier so that you don't lose access to your SMTP2GO account if you ever sell your domain or retire it. You want to make sure that the email address you create in this step matches the same one as in step 2. So in my case, I used hello@mydomain.com here.
 
 ## Step 4: Integrate with Gmail
 
@@ -35,4 +62,8 @@ Fourth, integrating it all together in Gmail.
 
 ## Step 5: Test It Out
 
-Finally, we're at the point where you get to test it all out! Compose a new message in Gmail, and when you select the Recipients field, you should see an option to choose between your Gmail address and your custom domain address. You can pick the custom domain and send an email with it. Whenever someone replies, that email will come straight to your Gmail inbox. If you have multiple domains, you can simply repeat this process and add all of them to your Gmail. Enjoy having a professional email address for your business!
+Finally, we're at the point where you get to test it all out! Compose a new message in Gmail, and when you select the Recipients field, you should see an option to choose between your Gmail address and your custom domain address. You can pick the custom domain and send an email with it. Whenever someone replies, that email will come straight to your Gmail inbox. If you have multiple domains, you can simply repeat this process and add all of them to your Gmail.
+
+You can also use a service such as <a href="https://hunter.io/email-verifier" target="_blank">Hunter</a> to verify that you've configured everything properly.
+
+Enjoy having a professional email address for you or your business! If you have any questions, shoot me a message <a href="/contact" target="_blank">here</a>.
