@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import ThemeDropdown from "@/components/ThemeDropdown";
+import Skeleton from "@/components/atoms/Skeleton";
 
 export default function ThemeSwitch() {
     const [mounted, setMounted] = useState(false);
@@ -14,7 +15,7 @@ export default function ThemeSwitch() {
     }, []);
 
     if (!mounted) {
-        return null;
+        return <Skeleton className="size-12" />;
     }
 
     return (

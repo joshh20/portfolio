@@ -3,6 +3,7 @@
 import { configData } from "@/assets/configData";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
+import Skeleton from "@/components/atoms/Skeleton";
 
 export default function Links() {
     const { resolvedTheme } = useTheme();
@@ -14,7 +15,13 @@ export default function Links() {
     }, []);
 
     if (!mounted) {
-        return null;
+        return (
+            <div className="flex flex-wrap justify-center gap-4 md:justify-end">
+                {[...Array(3)].map((_, index) => (
+                    <Skeleton key={index} className="size-6" />
+                ))}
+            </div>
+        );
     }
 
     let iconFillColor;

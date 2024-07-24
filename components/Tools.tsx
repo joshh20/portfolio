@@ -1,24 +1,8 @@
-"use client";
-
 import { configData } from "@/assets/configData";
-import { useTheme } from "next-themes";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import ImageDarkAware from "./ImageDarkAware";
+import ImageDarkAware from "@/components/ImageDarkAware";
 
 export default function Tools() {
-    const { resolvedTheme } = useTheme();
-    const [mounted, setMounted] = useState(false);
-
-    // This is necessary to avoid hydration mismatch errors
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    if (!mounted) {
-        return null;
-    }
-
     return (
         <section>
             <div className="mt-6 rounded-md bg-slate-200/10 p-8 text-slate-800 shadow-md dark:bg-slate-900 dark:text-slate-300 sm:mt-12">

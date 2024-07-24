@@ -3,6 +3,7 @@
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import Skeleton from "@/components/atoms/Skeleton";
 
 interface Item {
     name: string;
@@ -28,7 +29,7 @@ export default function ImageDarkAware({
     }, []);
 
     if (!mounted) {
-        return null;
+        return <Skeleton className={className ?? "size-16"} />;
     }
 
     return (
