@@ -9,15 +9,9 @@ export async function middleware(request: NextRequest) {
     const userAgent = JSON.stringify(request.headers.get("user-agent"));
     const statusCode = NextResponse.next().status;
     const method = request.method;
-
-    // let location;
-    // try {
-    //     location = await getIPGeoLocation("24.112.145.126");
-    // } catch (error) {
-    //     console.error("Error fetching location: ", error);
-    // }
+    const timestamp = Date().toLocaleString();
 
     console.log(
-        `${method} ${statusCode} ${url} User Agent:${userAgent} IP:${ip} Country:${country} \n`
+        `${method} ${statusCode} ${url} User Agent:${userAgent} IP:${ip} Country:${country} - ${timestamp} \n`
     );
 }
