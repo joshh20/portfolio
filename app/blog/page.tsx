@@ -8,7 +8,7 @@ import { configData } from "@/assets/configData";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Blog",
+    title: configData.pages.blogPage.header,
 };
 
 export default function Home() {

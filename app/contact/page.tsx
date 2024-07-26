@@ -4,7 +4,7 @@ import PageHeader from "@/components/atoms/PageHeader";
 import PageSubHeader from "@/components/atoms/PageSubHeader";
 
 export const metadata = {
-    title: "Contact",
+    title: configData.pages.contactPage.header,
 };
 
 export default function Contact() {

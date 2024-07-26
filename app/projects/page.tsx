@@ -4,7 +4,7 @@ import PageHeader from "@/components/atoms/PageHeader";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Projects",
+    title: configData.pages.projectsPage.header,
 };
 
 export default function Projects() {

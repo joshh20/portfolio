@@ -195,6 +195,14 @@ export const configData = {
                 "Bootstrap",
             ],
         },
+        {
+            name: "Van Life Mockup",
+            url: "https://joshh20.github.io/van-life/",
+            short: "shorts/van-life.mp4",
+            description:
+                "Van Life is a static website that I created as part of a tutorial while learning React Router by Remix. It allowed me to build true single page applications (SPAs) with navigation between pages. I also got acquainted with Google Firestore, which is a NoSQL database that allows for building Jamstack (serverless) frontends for the web.",
+            technologiesUsed: ["React", "React Router", "Firebase"],
+        },
     ],
     plugins: {
         recaptcha: {
