@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTopButton from "@/components/atoms/ScrollToTopButton";
 import { ThemeProvider } from "next-themes";
+import Script from "next/script";
 
 const nunito = Nunito({
     weight: ["300", "400", "500", "600", "700"],
@@ -39,6 +40,8 @@ export default function RootLayout({
                     <ScrollToTopButton />
                 </ThemeProvider>
             </body>
+            {/* Tiny Analytics pixel */}
+            <Script src="https://app.tinyanalytics.io/pixel/La8FX8bNuyu6ga2J" />
         </html>
     );
 }
