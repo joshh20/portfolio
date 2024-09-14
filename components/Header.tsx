@@ -16,7 +16,7 @@ export default function Header() {
 
     let pathname = usePathname();
     if (pathname !== "/") {
-        pathname = "/" + pathname?.split("/")[1] ?? "";
+        pathname = "/" + pathname?.split("/")[1];
     }
 
     return (
