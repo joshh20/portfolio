@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 export default function getRelativeTime(date: string): string {
     const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
     const now = new Date();
