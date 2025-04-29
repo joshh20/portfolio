@@ -7,12 +7,9 @@ import RelativeTimeWrapper from "@/components/atoms/RelativeTimeWrapper";
 
 export async function generateStaticParams() {
     const files = fs.readdirSync(path.join("posts"));
-
-    const paths = files.map((filename) => ({
+    return files.map((filename) => ({
         slug: filename.replace(".mdx", ""),
     }));
-
-    return paths;
 }
 
 function getPost({ slug }: { slug: string }) {
@@ -20,18 +17,17 @@ function getPost({ slug }: { slug: string }) {
         path.join("posts", slug + ".mdx"),
         "utf-8"
     );
-
     const { data: frontMatter, content } = matter(markdownFile);
-
-    return {
-        frontMatter,
-        slug,
-        content,
-    };
+    return { frontMatter, slug, content };
 }
 
-export async function generateMetadata({ params }: any) {
-    const blog = getPost(params);
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ slug: string }>;
+}) {
+    const { slug } = await params;
+    const blog = getPost({ slug });
 
     return {
         title: blog.frontMatter.title,
@@ -39,14 +35,16 @@ export async function generateMetadata({ params }: any) {
     };
 }
 
-export default function Post({ params }: any) {
-    const props = getPost(params);
+export default async function Post({
+    params,
+}: {
+    params: Promise<{ slug: string }>;
+}) {
+    const { slug } = await params;
+    const props = getPost({ slug });
 
     return (
-        <div
-            suppressHydrationWarning
-            className="prose prose-base lg:prose-lg dark:prose-invert mx-auto bg-slate-200/10 dark:bg-slate-900 p-8 rounded-md shadow-md"
-        >
+        <div className="prose prose-base lg:prose-lg dark:prose-invert mx-auto bg-slate-200/10 dark:bg-slate-900 p-8 rounded-md shadow-md">
             <Link href="/blog" className="block mb-4">
                 Go back
             </Link>

@@ -29,6 +29,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
+        // The suppress here is the recommended practice for next-themes
+        // https://github.com/pacocoursey/next-themes?tab=readme-ov-file#with-app
         <html lang="en" suppressHydrationWarning className="overflow-y-scroll">
             <body className={nunito.className}>
                 <ThemeProvider attribute="class">
