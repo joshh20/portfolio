@@ -2,8 +2,8 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import getRelativeTime from "@/utils/getRelativeTime";
 import Link from "next/link";
+import RelativeTimeWrapper from "@/components/atoms/RelativeTimeWrapper";
 
 export async function generateStaticParams() {
     const files = fs.readdirSync(path.join("posts"));
@@ -53,9 +53,8 @@ export default function Post({ params }: any) {
             <article>
                 <h1>{props.frontMatter.title}</h1>
                 <p className="pb-4 font-semibold">
-                    Posted {getRelativeTime(props.frontMatter.date)}
+                    Posted <RelativeTimeWrapper date={props.frontMatter.date} />
                 </p>
-
                 <MDXRemote source={props.content} />
             </article>
             <Link href="/blog" className="block mt-8">

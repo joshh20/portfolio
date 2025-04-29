@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
-import getRelativeTime from "@/utils/getRelativeTime";
+import RelativeTimeWrapper from "@/components/atoms/RelativeTimeWrapper";
 import PageHeader from "@/components/atoms/PageHeader";
 import { configData } from "@/assets/configData";
 import type { Metadata } from "next";
@@ -57,12 +57,16 @@ export default function Home() {
                                         </h3>
                                         <h4 className="font-bold sm:hidden mb-1">
                                             Posted{" "}
-                                            {getRelativeTime(blog.meta.date)}
+                                            <RelativeTimeWrapper
+                                                date={blog.meta.date}
+                                            />
                                         </h4>
                                         <p>{blog.meta.description}</p>
                                     </div>
                                     <div className="col-span-2 font-bold justify-self-end hidden sm:inline-block">
-                                        <p>{getRelativeTime(blog.meta.date)}</p>
+                                        <RelativeTimeWrapper
+                                            date={blog.meta.date}
+                                        />
                                     </div>
                                 </article>
                             </Link>

@@ -1,3 +1,5 @@
+"use client";
+
 import { configData } from "@/assets/configData";
 
 export default function Footer() {
