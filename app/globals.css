@@ -1,9 +1,45 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
+/* Dark mode configuration */
+@variant dark (&:where(.dark, .dark *));
+
+/* Theme customizations */
+@theme {
+    --font-nunito: Nunito;
+    --animate-text: text 5s ease infinite;
+    --animate-background: text 15s ease infinite;
+}
+
+/* Custom keyframes */
+@keyframes text {
+    0%,
+    100% {
+        background-size: 200% 200%;
+        background-position: left center;
+    }
+    50% {
+        background-size: 200% 200%;
+        background-position: right center;
+    }
+}
+
+/* Override prose colors */
+.prose {
+    --tw-prose-body: var(--color-slate-950);
+    --tw-prose-counters: var(--color-slate-800);
+    --tw-prose-bullets: var(--color-slate-800);
+}
+
+.dark .prose {
+    --tw-prose-body: var(--color-slate-200);
+    --tw-prose-counters: var(--color-slate-200);
+    --tw-prose-bullets: var(--color-slate-200);
+}
+
+/* Base styles */
 @layer base {
     body {
-        @apply bg-gradient-to-l from-cyan-500 to-purple-400 font-nunito motion-safe:animate-background dark:from-cyan-900 dark:to-purple-950;
+        @apply bg-linear-to-l from-cyan-500 to-purple-400 font-nunito motion-safe:animate-background dark:from-cyan-900 dark:to-purple-950;
     }
 }
