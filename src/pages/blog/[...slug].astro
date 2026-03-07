@@ -1,0 +1,36 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import RelativeTime from "@/components/RelativeTime.tsx";
+import { getCollection, render } from "astro:content";
+import { configData } from "@/assets/configData";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout
+  title={`${configData.name.first} ${configData.name.last} - ${post.data.title}`}
+  description={post.data.description}
+>
+  <div
+    class="prose prose-base mx-auto rounded-md bg-slate-200/10 p-4 shadow-md dark:prose-invert lg:prose-lg dark:bg-slate-900 sm:p-8"
+  >
+    <a href="/blog" class="mb-4 block">Go back</a>
+    <article>
+      <h1>{post.data.title}</h1>
+      <p class="pb-4 font-semibold">
+        Posted <RelativeTime date={post.data.date} client:load />
+      </p>
+      <Content />
+    </article>
+    <a href="/blog" class="mt-8 block">Go back</a>
+  </div>
+</Layout>

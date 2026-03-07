@@ -1,39 +1,44 @@
 {
-    "name": "joshhittie.com",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint"
-    },
-    "dependencies": {
-        "@emailjs/browser": "^4.4.1",
-        "clsx": "^2.1.1",
-        "gray-matter": "^4.0.3",
-        "next": "15.5.7",
-        "next-mdx-remote": "^5.0.0",
-        "next-themes": "^0.4.6",
-        "react": "19.2.1",
-        "react-dom": "19.2.1",
-        "react-hook-form": "^7.68.0",
-        "sharp": "^0.34.5"
-    },
-    "devDependencies": {
-        "@tailwindcss/postcss": "^4.1.17",
-        "@tailwindcss/typography": "^0.5.19",
-        "@types/node": "^22",
-        "@types/react": "19.2.7",
-        "@types/react-dom": "19.2.3",
-        "eslint": "^9",
-        "eslint-config-next": "15.5.7",
-        "postcss": "^8.5.6",
-        "tailwindcss": "^4.1.17",
-        "tsx": "^4.21.0",
-        "typescript": "^5"
-    },
-    "overrides": {
-        "nanoid": "^3.3.11"
-    }
+  "name": "joshhittie.com",
+  "type": "module",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro build && astro preview",
+    "astro": "astro",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest --coverage"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/sitemap": "^3.7.0",
+    "@emailjs/browser": "^4.4.1",
+    "@resvg/resvg-js": "^2.6.2",
+    "astro": "^5.17.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-google-recaptcha": "^3.1.0",
+    "react-hook-form": "^7.71.2",
+    "satori": "^0.19.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.6",
+    "@tailwindcss/typography": "^0.5.19",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^25.3.2",
+    "@types/react-google-recaptcha": "^2.1.9",
+    "@vitest/coverage-v8": "^4.0.18",
+    "autoprefixer": "^10.4.27",
+    "jsdom": "^28.1.0",
+    "postcss": "^8.5.6",
+    "prettier": "3.8.1",
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-tailwindcss": "0.7.2",
+    "tailwindcss": "^3.4.19",
+    "vitest": "^4.0.18"
+  }
 }

@@ -1,0 +1,82 @@
+---
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import ScrollToTopButton from "@/components/ScrollToTopButton.astro";
+import { configData } from "@/assets/configData";
+import "@/styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const fullName = `${configData.name.first} ${configData.name.last}`;
+
+const {
+  title = `${fullName} - ${configData.jobTitle}`,
+  description = configData.metadata.description,
+} = Astro.props;
+---
+
+<html lang="en" class="overflow-y-scroll">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="author" content={fullName} />
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content={new URL("/opengraph-image.png", Astro.site).href}
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta
+      name="twitter:image"
+      content={new URL("/opengraph-image.png", Astro.site).href}
+    />
+    <link
+      rel="preload"
+      href="/fonts/Nunito-Latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>{title}</title>
+    <!-- Dark mode initialization (prevents flash of wrong theme) -->
+    <script is:inline>
+      (function () {
+        const theme = localStorage.getItem("theme") || "system";
+        const isDark =
+          theme === "dark" ||
+          (theme === "system" &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.classList.toggle("dark", isDark);
+      })();
+    </script>
+    <script
+      is:inline
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="c4f6ff5d-516d-4d23-a659-8ae5345c8687"></script>
+  </head>
+  <body>
+    <Header />
+    <main class="mx-4 max-w-4xl py-8 sm:mx-12 sm:mt-8 lg:mx-auto">
+      <slot />
+    </main>
+    <Footer />
+    <ScrollToTopButton />
+  </body>
+</html>

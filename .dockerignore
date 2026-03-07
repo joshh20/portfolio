@@ -1,9 +1,7 @@
-Dockerfile
-.dockerignore
-compose*.yaml
 node_modules
-npm-debug.log
-README.md
-.next
-.git
+dist
 to-do.md
+README.md
+.git
+.env*
+.dockerignore

@@ -1,0 +1,61 @@
+---
+import { configData } from "@/assets/configData";
+import ThemeDropdown from "@/components/ThemeDropdown.astro";
+import NameHover from "@/components/NameHover.tsx";
+
+const myName = `${configData.name.first} ${configData.name.last}`;
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+const currentPath = pathname === "/" ? "/" : "/" + pathname.split("/")[1];
+---
+
+<header
+  class="bg-slate-50 text-slate-500 dark:bg-slate-900 dark:text-slate-400"
+>
+  <div class="mx-4 sm:mx-12">
+    <div class="mx-auto flex max-w-4xl items-center justify-between py-5">
+      <!-- Left side -->
+      <div class="flex w-28 whitespace-nowrap">
+        <NameHover name={myName} hoverText={configData.jobTitle} client:load />
+      </div>
+      <!-- Center -->
+      <nav class="flex gap-4">
+        {
+          configData.nav.map((item) => (
+            <a
+              href={item.link}
+              class:list={[
+                "group hidden text-xl font-medium transition hover:drop-shadow-md dark:hover:text-slate-200 sm:block",
+                { "text-black dark:text-slate-200": currentPath === item.link },
+              ]}
+            >
+              {item.name}
+              <span class="block h-0.5 max-w-0 bg-purple-400 transition-all duration-500 group-hover:max-w-full" />
+            </a>
+          ))
+        }
+      </nav>
+      <!-- Right side -->
+      <div
+        class="rounded-full border-2 border-gray-300 bg-transparent ring-gray-300 transition-all hover:ring-2 hover:ring-offset-2 dark:border-gray-700 dark:bg-transparent dark:ring-gray-200 dark:hover:ring-2 dark:hover:ring-offset-2"
+      >
+        <ThemeDropdown />
+      </div>
+    </div>
+  </div>
+  <!-- Small screen buttons -->
+  <nav class="mx-2 flex flex-wrap justify-center gap-3 pb-2 sm:hidden">
+    {
+      configData.nav.map((item) => (
+        <a
+          href={item.link}
+          class:list={[
+            "rounded-lg border-2 border-gray-300 bg-transparent px-2 py-1 ring-gray-300 hover:ring-2 hover:ring-offset-2 dark:border-gray-700 dark:bg-transparent dark:ring-gray-200 dark:hover:ring-2 dark:hover:ring-offset-2",
+            { "font-bold dark:text-slate-200": currentPath === item.link },
+          ]}
+        >
+          {item.name}
+        </a>
+      ))
+    }
+  </nav>
+</header>

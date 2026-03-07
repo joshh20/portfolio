@@ -1,0 +1,17 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import PageHeader from "@/components/PageHeader.astro";
+import PageSubHeader from "@/components/PageSubHeader.astro";
+import ContactForm from "@/components/ContactForm";
+import { configData } from "@/assets/configData";
+---
+
+<Layout
+  title={`${configData.name.first} ${configData.name.last} - ${configData.pages.contactPage.header}`}
+>
+  <section class="mx-auto max-w-2xl">
+    <PageHeader title={configData.pages.contactPage.header} />
+    <PageSubHeader text={configData.pages.contactPage.subheader} />
+    <ContactForm client:only="react" />
+  </section>
+</Layout>

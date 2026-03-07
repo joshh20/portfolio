@@ -1,0 +1,19 @@
+---
+import { configData } from "@/assets/configData";
+---
+
+<footer>
+  <div
+    class="py-4 text-center font-semibold text-slate-800 dark:text-slate-300"
+  >
+    <span
+      >&copy; {configData.name.first}
+      {configData.name.last}
+      <span id="footer-year"></span></span
+    >
+  </div>
+</footer>
+
+<script is:inline>
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>

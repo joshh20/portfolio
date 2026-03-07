@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  item: {
+    name: string;
+    image: string;
+    link: string;
+    highlight: boolean;
+    imageDark?: string;
+  };
+  className?: string;
+}
+
+const { item, className = "size-16" } = Astro.props;
+---
+
+{
+  item.imageDark ? (
+    <>
+      <Image
+        src={item.image}
+        class={`${className} block dark:hidden`}
+        alt=""
+        aria-label={item.name}
+        loading="lazy"
+        width="256"
+        height="256"
+      />
+      <Image
+        src={item.imageDark}
+        class={`${className} hidden dark:block`}
+        alt=""
+        aria-label={item.name}
+        loading="lazy"
+        width="256"
+        height="256"
+      />
+    </>
+  ) : (
+    <Image
+      src={item.image}
+      class={className}
+      alt=""
+      aria-label={item.name}
+      loading="lazy"
+      width="256"
+      height="256"
+    />
+  )
+}

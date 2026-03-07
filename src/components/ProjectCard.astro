@@ -1,0 +1,88 @@
+---
+import { configData } from '@/assets/configData';
+import ImageDarkAware from '@/components/ImageDarkAware.astro';
+
+const technologiesMap = new Map(
+    configData.technologies.map((tech) => [tech.name, tech])
+);
+
+function getTechnologies(names: string[]) {
+    return names.flatMap((name) => {
+        const tech = technologiesMap.get(name);
+        return tech ? [tech] : [];
+    });
+}
+---
+{configData.projects.map((project, projectIndex) => (
+    <section class="pb-4 sm:pb-6">
+        <details
+            class="rounded-md bg-slate-200/10 p-4 text-slate-800 shadow-md open:duration-500 dark:bg-slate-900 dark:text-slate-300 sm:open:p-8 [&_svg]:open:-rotate-180"
+            open={projectIndex === 0}
+        >
+            <!-- Project's title -->
+            <summary class="flex cursor-pointer items-center gap-4 text-xl font-semibold transition duration-300 ease-in-out hover:drop-shadow-lg sm:text-2xl [&::-webkit-details-marker]:hidden">
+                <div>
+                    <svg
+                        class="w-8 rotate-0 transform text-blue-700 duration-500 sm:w-12"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                    >
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div>{project.name}</div>
+            </summary>
+            {project.description && (
+                <p class="my-6 whitespace-pre-line font-semibold leading-relaxed sm:text-lg">
+                    {project.description}
+                </p>
+            )}
+            {project.short && (
+                <div class="flex justify-center">
+                    <video
+                        src={project.short}
+                        playsinline
+                        autoplay
+                        muted
+                        loop
+                        class="mb-4 rounded-md sm:mb-8"
+                        aria-label={`${project.name} video demonstration`}
+                    ></video>
+                </div>
+            )}
+            {project.url && (
+                <div class="my-8 text-center">
+                    <a
+                        href={project.url}
+                        target="_blank"
+                        class="rounded-lg border-2 border-gray-300/30 bg-slate-50/80 px-2 py-1 font-semibold ring-slate-50 transition-all hover:ring-2 dark:border-gray-700 dark:bg-transparent dark:ring-gray-200 dark:hover:ring-2 dark:hover:ring-offset-2"
+                    >
+                        Visit website
+                    </a>
+                </div>
+            )}
+            {project.technologiesUsed.length > 0 && (
+                <div class="mt-12 text-center text-2xl font-semibold">
+                    Built with
+                    <div class="mt-4 flex flex-wrap justify-center gap-8 text-base sm:gap-12">
+                        {getTechnologies(project.technologiesUsed).map((tech) => (
+                            <a
+                                href={tech.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex flex-col items-center justify-center duration-200 hover:scale-125"
+                            >
+                                <ImageDarkAware item={tech} className="size-12 sm:size-20" />
+                                <h3 class="mt-4">{tech.name}</h3>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            )}
+        </details>
+    </section>
+))}
