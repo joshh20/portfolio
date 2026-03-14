@@ -7,7 +7,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        nunito: "Nunito",
+        nunito: ["var(--font-nunito)"],
       },
       animation: {
         text: "text 5s ease infinite",

@@ -3,6 +3,7 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import ScrollToTopButton from "@/components/ScrollToTopButton.astro";
 import { configData } from "@/assets/configData";
+import { Font } from "astro:assets";
 import "@/styles/global.css";
 
 interface Props {
@@ -41,13 +42,7 @@ const {
       name="twitter:image"
       content={new URL("/opengraph-image.png", Astro.site).href}
     />
-    <link
-      rel="preload"
-      href="/fonts/Nunito-Latin.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
+    <Font cssVariable="--font-nunito" preload />
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

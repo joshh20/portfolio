@@ -3,14 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  @font-face {
-    font-family: "Nunito";
-    font-style: normal;
-    font-weight: 200 900;
-    font-display: swap;
-    src: url("/fonts/Nunito-Latin.woff2") format("woff2");
-  }
-
   body {
     @apply bg-gradient-to-l from-cyan-500 to-purple-400 font-nunito motion-safe:animate-background dark:from-cyan-900 dark:to-purple-950;
   }
